@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || !href.endsWith('style.css')) return;
-    const url = new URL(href, window.location.origin);
+    const url = new URL(href, document.baseURI);
     url.searchParams.set('v', stamp);
     link.href = url.toString();
   });
 
-  loadFragment('#navbar-placeholder', '/includes/navbar.html');
-  loadFragment('#footer-placeholder', '/includes/footer.html');
+  loadFragment('#navbar-placeholder', 'includes/navbar.html');
+  loadFragment('#footer-placeholder', 'includes/footer.html');
 
   const tabs = Array.from(document.querySelectorAll('.program-tab'));
   const panels = Array.from(document.querySelectorAll('.program-panel'));
