@@ -13,7 +13,7 @@ let currentSlide = 0;
   }, 5000); // change slide every 5 seconds
 
   // Countdown Timer
-  const countdownDate = new Date("May 18, 2026 09:00:00").getTime();
+  const countdownDate = new Date("May 17, 2027 09:00:00").getTime();
   const updateCountdown = () => {
     const now = new Date().getTime();
     const distance = countdownDate - now;

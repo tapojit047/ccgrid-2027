@@ -4,7 +4,9 @@ const loadFragment = async (selector, url) => {
   if (!target) return;
 
   try {
-    const response = await fetch(url);
+    const fragmentUrl = new URL(url, document.baseURI);
+    fragmentUrl.searchParams.set('v', Date.now().toString());
+    const response = await fetch(fragmentUrl);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     target.innerHTML = await response.text();
   } catch (error) {
