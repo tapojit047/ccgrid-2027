@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call for Papers – CCGrid 2026</title>
+  <script src="libs/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" href="libs/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="/layout.js" defer></script>
+  
+  <!-- Default Statcounter code for CCGrid2026
+  https://ccgrid2026.cdms.westernsydney.edu.au/cfp.html -->
+  <script src="/counter.js"></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/13170862/0/40319fe7/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="container my-4">
+  <h2 class="mb-3 fw-bold">Call for Artifacts</h2>
+
+  <p class="">
+    CCGrid 2026 will award three IEEE reproducibility badges to accepted main research track papers:
+  </p>
+  <ol class="mb-4">
+    <li>Open Research Objects (<strong>ORO</strong>)</li>
+    <li>Reusable/Research Objects Reviewed (<strong>ROR</strong>)</li>
+    <li>Results Reproduced (<strong>ROR-R</strong>)</li>
+  </ol>
+
+  <img src="assets/artifacts.png" alt="Artifact Badges" class="img-fluid mb-4" style="max-width:400px">
+
+  <p class="text-muted">
+    Artifact evaluation is post-acceptance only and does not influence acceptance decisions.
+    Authors of accepted main research-track papers may request badges by submitting the artifacts and a 2-page description.
+    If successfully reviewed, include the 2-page description and the awarded badge logo in the camera-ready submission.
+  </p>
+  <p class="text-muted">
+    Hosting software/data on GitHub/GitLab isn’t sufficient; assign a persistent identifier (e.g., via Zenodo, figshare).
+    We recommend repositories like Zenodo, Dryad, or figshare to promote FAIR principles.
+  </p>
+
+  <section id="badges" class="mt-4">
+    <h2 class="mb-3 fw-bold">Description of Badges</h2>
+
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card h-100" id="oro">
+          <div class="card-body">
+            <h3 class="card-title h4">1. Open Research Objects (ORO)</h3>
+            <p class="card-text">
+              Indicates that author-created digital objects (data/code) are permanently stored in a public repository with a
+              globally unique identifier, guaranteed persistence, and an open license to maximize access. Aligns with ACM
+              “Artifacts Available” and COS “Open Data/Materials” for digital objects.
+            </p>
+            <p class="card-text">
+              The AEC and authors decide what objects are “relevant”. Provide enough documentation for reviewers to understand core functionality and data context.
+            </p>
+            <h4 class="h5 mt-3">Review criteria</h4>
+            <ul class="mb-0">
+              <li><strong>Availability:</strong> Public repository with global identifier and guaranteed persistence.</li>
+              <li><strong>License:</strong> Open license maximizing accessibility (e.g., OSI/CC/public domain).</li>
+              <li><strong>Authorship:</strong> Reasonable and complete authorship attached to the archived artifact.</li>
+              <li><strong>Documentation:</strong> For software: core functionality overview. For data: context, description, source, and usage in the paper. Metadata accessible for relevant physical objects.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card h-100" id="ror">
+          <div class="card-body">
+            <h3 class="card-title h4">2. Reusable/Research Objects Reviewed (ROR)</h3>
+            <p class="card-text">
+              Higher-level than ORO; <em>requires</em> ORO. Corresponds to IEEE “Code Reviewed.” All author-created digital objects used
+              in the research (data/software) are reviewed.
+            </p>
+
+            <h4 class="h5 mt-3">Software review criteria</h4>
+            <ul>
+              <li><strong>Documentation:</strong> Statement of need/function, install instructions, usage examples, API docs.</li>
+              <li><strong>Functionality:</strong> Reviewers can install and verify core functionality on commodity hardware with step-by-step instructions.</li>
+              <li><strong>Testing:</strong> Documented manual checks (e.g., sample input &amp; expected output) and ideally an automated test suite with CI (e.g., GitHub Actions).</li>
+            </ul>
+
+            <h4 class="h5">Data review criteria</h4>
+            <ul class="mb-0">
+              <li><strong>Documentation:</strong> Dataset context, description, source, and how it’s used in the paper.</li>
+              <li><strong>Functionality:</strong> Enable reuse beyond the paper; for proprietary formats, include code to access data programmatically.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card h-100" id="ror-r">
+          <div class="card-body">
+            <h3 class="card-title h4">3. Results Reproduced (ROR-R)</h3>
+            <p class="card-text">
+              Highest tier, awarded when evaluators reproduce the paper’s key results using the authors’ objects, methods, code, and analysis conditions.
+              Focus is on reproducing behavior/claims, not exact values (especially with hardware dependence).
+            </p>
+
+            <h4 class="h5 mt-3">Scope</h4>
+            <ul>
+              <li><strong>Reproduce behavior:</strong> Attempt on the same hardware where feasible; otherwise collaborate to establish equivalent behavior on commodity hardware.</li>
+              <li><strong>Reproduce central results:</strong> AEC identifies key results/claims; badge is based on reproducing these behaviors.</li>
+            </ul>
+
+            <h4 class="h5">Additional requirements</h4>
+            <ul>
+              <li>Paper already qualified for <strong>ROR</strong> (and thus <strong>ORO</strong>).</li>
+              <li>Authors assist with materials and clarifications.</li>
+            </ul>
+
+            <h4 class="h5">Process</h4>
+            <ol class="mb-0">
+              <li>Authors submit a comprehensive reproduction plan and research objects.</li>
+              <li>Independent attempt to reproduce by evaluators.</li>
+              <li>Author–evaluator collaboration to resolve discrepancies.</li>
+              <li>Final verification by the AEC; ROR-R badge appears next to ROR in proceedings.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prep" class="mt-5">
+    <h2 class="mb-3 fw-bold">Artifact Preparation &amp; Submission</h2>
+    <p>Authors seeking any badge must submit a <strong>2-page artifact description</strong> including a brief artifact overview and review details:</p>
+    <ul>
+      <li><strong>Software:</strong> link; language; build/run environment (tools, binaries, hardware); input dataset; expected output/metrics; estimated times for build/run.</li>
+      <li><strong>Data:</strong> link; documentation per criteria above.</li>
+    </ul>
+    <p>
+      Clearly map each artifact to specific parts of the accepted paper. <strong>Cite artifacts with a persistent identifier</strong> (e.g., DOI from Zenodo/figshare).
+      Optionally add a development URL (e.g., GitHub). Use the <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank">IEEE conference template</a>.
+    </p>
+    <p class="mb-0">
+      If artifacts pass evaluation, update the 2-page description and include it as an <strong>appendix</strong> to the camera-ready paper, along with the badge logo.
+      This step is required for publication with a badge.
+    </p>
+  </section>
+
+  <section id="timeline" class="mt-5">
+    <h2 class="mb-3 fw-bold">Timeline</h2>
+    <p class="text-muted">Between author notifications (expected <time datetime="2026-02-10">10 Feb 2026</time>) and camera-ready deadline.</p>
+
+      <ul >
+    <li >
+      <span>Deadline for artifact submission for accepted papers: </span>
+      <time datetime="2026-02-11"><span class="text-strike">February 17, 2026</span> February 20, 2026</time>
+    </li>
+    <li >
+      <span>Artifact review midpoint check-in: </span>
+      <time datetime="2026-02-22"><span class="text-strike">February 22, 2026</span> February 25, 2026</time>
+    </li>
+    <li>
+      <span>Artifact review results announcements to authors: </span>
+      <time datetime="2026-03-08"><span class="text-strike">March 8, 2026</span> March 10, 2026</time>
+    </li>
+    <li>
+      <span>Camera-ready with 2-page appendix for awarded artifacts: </span>
+      <time datetime="2026-03-15">March 15, 2026</time>
+    </li>
+  </ul>
+
+    <p class="text-muted">We will hold a midpoint check-in to catch easy issues early (e.g., missing files/imports).</p>
+  </section>
+
+  <section id="notes" class="mt-5">
+    <h2 class="mb-3 fw-bold">Submission Notes</h2>
+    <ul>
+      <li><strong>Badging summary:</strong> ORO = DOI’d archive + license + docs; ROR = successful install/run + complete docs/tests; ROR-R = reviewers reproduce main behavior/metrics.</li>
+      <li><strong>Commodity hardware:</strong> Artifacts should run on typical laptops/desktops; depend mainly on mainstream packages.</li>
+      <li><strong>Packaging:</strong> Prefer container/VM for nontrivial dependencies (e.g., Docker image or OVF VM) and keep images small.</li>
+      <li><strong>Containerization (recommended):</strong> For ROR / ROR-R, provide <code>docker compose build</code> and <code>docker compose run</code> (or Apptainer), bind-mount outputs to <code>./out/</code>, include a 30–60 min smoke test with expected outputs (files/metrics/hashes/plots).</li>
+      <li><strong>Versions &amp; runtime:</strong> State exact CUDA/driver/toolchain versions; pin packages (lockfile). Target ≤1h install + ≤2h minimal run. If special HW/cloud needed, provide temporary access with full step-by-step instructions.</li>
+      <li><strong>Specialized environments:</strong> If tightly coupled to HPC/cloud/accelerators, authors must provide reviewer access. State this in both the artifact submission and EasyChair abstract; share credentials with AEC as directed.</li>
+    </ul>
+  </section>
+
+  <!-- Chairs and contacts
+Reza Farivar, University of Illinois at Urbana-Champaign, US
+Tomasz Szydlo, Newcastle University, UK
+Fábio Rossi, Federal Institute Farroupilha (IFFAR), Brazil -->
+  <section id="chairs" class="mt-5">
+    <h2 class="mb-3 fw-bold">Chairs and Contacts</h2>
+    <ul>
+      <li>
+        Reza Farivar, University of Illinois at Urbana-Champaign, US —
+        <a href="mailto:farivar2@illinois.edu">farivar2@illinois.edu</a>
+      </li>
+      <li>
+        Tomasz Szydlo, Newcastle University, UK —
+        <a href="mailto:tomasz.szydlo@newcastle.ac.uk">tomasz.szydlo@newcastle.ac.uk</a>
+      </li>
+      <li>
+        Fábio Rossi, Federal Institute Farroupilha (IFFAR), Brazil —
+        <a href="mailto:fabio.rossi@iffarroupilha.edu.br">fabio.rossi@iffarroupilha.edu.br</a>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="mt-4">
+    <a class="btn btn-primary" target="_blank" href="https://easychair.org/my/conference?conf=ccgrid2026workshops" rel="noopener">
+      Submission Page
+    </a>
+    <small class="text-muted ms-2">Choose “CCGrid2026 Artifacts track.</small>
+  </section>
+</div>
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>
+
