@@ -1,0 +1,188 @@
+<style>
+  .ccgrid2027-chairs-page {
+    --ccgrid-green: #0a6a3b;
+    --ccgrid-text: #28332e;
+    --ccgrid-muted: #4d5c55;
+    font-family: Arial, sans-serif;
+    color: var(--ccgrid-text);
+    background: #ffffff;
+  }
+
+  .ccgrid2027-chairs-page,
+  .ccgrid2027-chairs-page * {
+    box-sizing: border-box;
+  }
+
+  .ccgrid2027-chairs-shell {
+    width: min(1200px, calc(100% - 22px));
+    margin: 0 auto;
+    padding: 40px 0 34px;
+  }
+
+  .ccgrid2027-chairs-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 42px;
+    padding: 34px 40px 36px;
+    border-radius: 24px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #005c34 0%, #00773d 58%, #3f9b67 100%);
+  }
+
+  .ccgrid2027-chairs-hero::after {
+    content: "";
+    position: absolute;
+    right: -74px;
+    bottom: -104px;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.13);
+    pointer-events: none;
+  }
+
+  .ccgrid2027-chairs-hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #ffffff;
+    font-size: 2.75rem;
+    line-height: 1.08;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-chairs-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .ccgrid2027-chairs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 72px 30px;
+  }
+
+  .ccgrid2027-chair-section {
+    min-width: 0;
+  }
+
+  .ccgrid2027-chair-heading {
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--ccgrid-green);
+    color: var(--ccgrid-green);
+    font-size: 1.35rem;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .ccgrid2027-chair-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ccgrid2027-chair-list li {
+    margin: 0;
+    color: var(--ccgrid-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .ccgrid2027-chair-list li + li {
+    margin-top: 12px;
+  }
+
+  .ccgrid2027-chair-list strong {
+    color: var(--ccgrid-text);
+    font-weight: 800;
+  }
+
+  @media (max-width: 960px) {
+    .ccgrid2027-chairs-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ccgrid2027-chairs-shell {
+      width: min(100% - 22px, 1200px);
+      padding: 24px 0 18px;
+    }
+
+    .ccgrid2027-chairs-hero {
+      margin-bottom: 28px;
+      padding: 26px 22px 28px;
+      border-radius: 18px;
+    }
+
+    .ccgrid2027-chairs-hero h1 {
+      font-size: 2rem;
+    }
+
+    .ccgrid2027-chairs-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .ccgrid2027-chair-heading {
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+    }
+  }
+</style>
+
+<div class="ccgrid2027-chairs-page">
+  <div class="ccgrid2027-chairs-shell">
+    <header class="ccgrid2027-chairs-hero">
+      <h1>Organizing Committee</h1>
+    </header>
+
+    <h2 class="ccgrid2027-chairs-title">CCGrid 2027 Committee Chairs</h2>
+
+    <section class="ccgrid2027-chairs-grid" aria-label="CCGrid 2027 committee chairs">
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Honorary Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Carlos Varela</strong>, Rensselaer Polytechnic Institute, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">General Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Hong Jiang</strong>, The University of Texas at Arlington, US</li>
+          <li><strong>Mohsen Amini</strong>, University of North Texas, US</li>
+          <li><strong>Maria Fazio</strong>, University of Messina, Italy</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Program Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Bahman Javadi</strong>, Western Sydney University, Australia</li>
+          <li><strong>Song Fu</strong>, University of North Texas, US</li>
+          <li><strong>Valeria Cardellini</strong>, University of Rome Tor Vergata, Italy</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Workshop Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Adel N. Toosi</strong>, The University of Melbourne, Australia</li>
+          <li><strong>Javid Taheri</strong>, Karlstad University, Sweden</li>
+        </ul>
+      </section>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,481 @@
+<style>
+  .ccgrid2027-page {
+    --ccgrid-green: #00853e;
+    --ccgrid-green-2: #004f2d;
+    --ccgrid-light: #f6f8f6;
+    --ccgrid-text: #1d2522;
+    --ccgrid-muted: #34423c;
+    font-family: Arial, sans-serif;
+    color: var(--ccgrid-text);
+    background: var(--ccgrid-light);
+  }
+
+  .ccgrid2027-page * {
+    box-sizing: border-box;
+  }
+
+  .ccgrid2027-hero {
+    position: relative;
+    aspect-ratio: 1672 / 941;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+    background: #004f2d;
+  }
+
+  .ccgrid2027-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0, 61, 38, 0.78), rgba(0, 61, 38, 0.5), rgba(0, 0, 0, 0.22));
+    pointer-events: none;
+  }
+
+  .ccgrid2027-hero-slide {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: scale(1.06);
+    animation: ccgrid2027-hero-slideshow 30s infinite;
+  }
+
+  .ccgrid2027-hero-slide-1 {
+    background-image: url("assets/background4.jpg");
+  }
+
+  .ccgrid2027-hero-slide-2 {
+    background-image: url("assets/background5.jpg");
+    animation-delay: 6s;
+  }
+
+  .ccgrid2027-hero-slide-3 {
+    background-image: url("assets/background6.jpg");
+    animation-delay: 12s;
+  }
+
+  .ccgrid2027-hero-slide-4 {
+    background-image: url("assets/background7.jpg");
+    animation-delay: 18s;
+  }
+
+  .ccgrid2027-hero-slide-5 {
+    background-image: url("assets/background8.jpg");
+    animation-delay: 24s;
+  }
+
+  @keyframes ccgrid2027-hero-slideshow {
+    0% {
+      opacity: 0;
+      transform: scale(1.06) translateX(0);
+    }
+
+    8%,
+    30% {
+      opacity: 1;
+    }
+
+    38% {
+      opacity: 0;
+      transform: scale(1.12) translateX(-2%);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1.12) translateX(-2%);
+    }
+  }
+
+  .ccgrid2027-hero-content {
+    position: absolute;
+    left: 5.4%;
+    right: 5.4%;
+    bottom: 9%;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ccgrid2027-hero-logos {
+    position: absolute;
+    left: 5.4%;
+    right: 5.4%;
+    top: 5.5%;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    pointer-events: none;
+  }
+
+  .ccgrid2027-hero-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 178px;
+    min-height: 72px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  }
+
+  .ccgrid2027-hero-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 62px;
+    object-fit: contain;
+    opacity: 0.9;
+  }
+
+  .ccgrid2027-hero-title {
+    flex-basis: 100%;
+    max-width: 980px;
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 2.35rem;
+    line-height: 1.08;
+    font-weight: 800;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.36);
+  }
+
+  .ccgrid2027-button-row {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ccgrid2027-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 100%;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 7px;
+    background: rgba(0, 80, 44, 0.78);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(2px);
+  }
+
+  .ccgrid2027-meta-text {
+    min-width: 0;
+  }
+
+  .ccgrid2027-meta-pill a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-meta-pill a:hover,
+  .ccgrid2027-meta-pill a:focus {
+    color: #ffffff;
+  }
+
+  .ccgrid2027-meta-icon {
+    font-size: 1.15em;
+    line-height: 1;
+  }
+
+  .ccgrid2027-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 17px;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #005f2f;
+    font-size: 0.9rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  }
+
+  .ccgrid2027-button:hover,
+  .ccgrid2027-button:focus {
+    color: #004f2d;
+    text-decoration: none;
+  }
+
+  .ccgrid2027-page .ccgrid2027-main {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 72px 0 30px !important;
+  }
+
+  .ccgrid2027-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+    gap: 36px;
+    align-items: start;
+    margin-bottom: 44px;
+  }
+
+  .ccgrid2027-intro p,
+  .ccgrid2027-document p,
+  .ccgrid2027-document li {
+    color: var(--ccgrid-muted);
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .ccgrid2027-info {
+    margin: 0;
+    padding: 20px;
+    border-left: 5px solid #00853e;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(20, 44, 34, 0.08);
+  }
+
+  .ccgrid2027-info div + div {
+    margin-top: 18px;
+  }
+
+  .ccgrid2027-info dt {
+    color: #52635c;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .ccgrid2027-info dd {
+    margin: 4px 0 0;
+    color: #17231f;
+    font-weight: 700;
+  }
+
+  .ccgrid2027-info a {
+    color: #005c38;
+  }
+
+  .ccgrid2027-document {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 36px;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(20, 44, 34, 0.08);
+  }
+
+  .ccgrid2027-document h1 {
+    margin: 38px 0 16px;
+    color: #12251d;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .ccgrid2027-document h1:first-child {
+    margin-top: 0;
+  }
+
+  .ccgrid2027-document ul {
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .ccgrid2027-document li {
+    margin-bottom: 18px;
+  }
+
+  .ccgrid2027-document a {
+    color: #0000ee;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .ccgrid2027-hero-logo {
+      width: 144px;
+      min-height: 58px;
+      padding: 8px 10px;
+    }
+
+    .ccgrid2027-hero-logo img {
+      max-height: 48px;
+    }
+
+    .ccgrid2027-hero-title {
+      font-size: 1.9rem;
+    }
+
+    .ccgrid2027-intro {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .ccgrid2027-hero {
+      aspect-ratio: auto;
+      min-height: 560px;
+    }
+
+    .ccgrid2027-hero-content {
+      left: 6%;
+      right: 6%;
+      bottom: 7%;
+      gap: 8px;
+    }
+
+    .ccgrid2027-hero-logos {
+      left: 6%;
+      right: 6%;
+      top: 4.5%;
+      gap: 7px;
+    }
+
+    .ccgrid2027-hero-logo {
+      width: 106px;
+      min-height: 42px;
+      padding: 5px 7px;
+      border-radius: 6px;
+    }
+
+    .ccgrid2027-hero-logo img {
+      max-height: 36px;
+    }
+
+    .ccgrid2027-hero-title {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+      line-height: 1.12;
+    }
+
+    .ccgrid2027-meta-pill,
+    .ccgrid2027-button {
+      min-height: 32px;
+      padding: 0 10px;
+      font-size: 0.66rem;
+      border-radius: 5px;
+    }
+
+    .ccgrid2027-page .ccgrid2027-main {
+      width: min(100% - 28px, 1100px);
+      padding-top: 48px !important;
+    }
+
+    .ccgrid2027-document {
+      padding: 24px 18px;
+    }
+  }
+</style>
+
+<div class="ccgrid2027-page">
+  <header class="ccgrid2027-hero" id="home">
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-1" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-2" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-3" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-4" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-5" aria-hidden="true"></span>
+    <div class="ccgrid2027-hero-logos" aria-label="Conference and host logos">
+      <span class="ccgrid2027-hero-logo ccgrid2027-hero-logo-unt">
+        <img src="assets/unt_logo.png" alt="University of North Texas">
+      </span>
+      <span class="ccgrid2027-hero-logo ccgrid2027-hero-logo-ccgrid">
+        <img src="assets/logo_ccgrid4.png" alt="CCGrid 2027">
+      </span>
+    </div>
+    <div class="ccgrid2027-hero-content" aria-label="Conference highlights">
+      <h1 class="ccgrid2027-hero-title">The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing</h1>
+      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128205;</span>Dallas-Fort Worth, Texas, USA</span>
+      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#127963;</span><span class="ccgrid2027-meta-text">Hosted by <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a> and <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a></span></span>
+      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128197;</span>17-20 May 2027</span>
+      <div class="ccgrid2027-button-row">
+        <a href="#call-for-papers" class="ccgrid2027-button">View CFP</a>
+        <a href="committees-wp.html" class="ccgrid2027-button">View Organizing Committee</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="ccgrid2027-main">
+    <section class="ccgrid2027-intro" aria-label="Conference overview">
+      <div>
+        <p>
+          The IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid) is the premier forum for disseminating the latest advances in distributed systems, cloud computing, systems for AI/ML, distributed intelligence and future computing paradigms. In 2027, for the first time, CCGrid will be proudly hosted in Dallas-Fort Worth, Texas, USA, bringing together researchers, practitioners, and industry leaders from across the globe to explore innovations shaping the future of distributed and cloud technologies.
+        </p>
+      </div>
+      <dl class="ccgrid2027-info">
+        <div>
+          <dt>Location</dt>
+          <dd>Dallas-Fort Worth, Texas, USA</dd>
+        </div>
+        <div>
+          <dt>Host</dt>
+          <dd><a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a> and <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a></dd>
+        </div>
+        <div>
+          <dt>Conference Dates</dt>
+          <dd>17-20 May 2027</dd>
+        </div>
+      </dl>
+    </section>
+
+    <article id="call-for-papers" class="ccgrid2027-document">
+      <h1>Call for Papers</h1>
+      <p>We invite original, high-quality papers that address <strong>fundamental research</strong> and <strong>emerging challenges</strong> across a broad spectrum of distributed systems and applications. Submissions may focus on theoretical foundations, system design, implementation, or real-world deployments. We particularly encourage contributions stemming from industry efforts and academia-industry collaborations, including practical experiences, deployed systems, and applied research with tangible impact.</p>
+
+      <h1 id="technical-tracks">Technical Tracks</h1>
+
+      <ul>
+        <li><strong>Track 1 – Hardware Systems, Architectures, and Quantum Future Compute Platforms:</strong> Innovations in computing and networking hardware, system architectures, and emerging compute paradigms. Topics include accelerators, heterogeneous systems, reconfigurable architectures, and quantum or neuromorphic computing platforms across cloud, edge, and HPC environments. This track also covers advanced networking technologies such as software-defined networking (SDN) and high-performance interconnects for distributed systems.</li>
+
+        <li><strong>Track 2 – Software Systems, Applications, and Programming Models:</strong> Advances in middleware, operating systems, programming frameworks, cloud-native systems, and distributed application development. Topics include serverless computing, microservices, container orchestration, and resource management and scheduling. This track also welcomes contributions on data-intensive systems, distributed storage architectures, and scalable data management frameworks.</li>
+
+        <li><strong>Track 3 – Sustainable Computing and Green Technologies:</strong><br>Energy-efficient computing, carbon-aware platforms, carbon-intelligent scheduling, and sustainable systems design across the cloud-to-edge continuum. Topics also include cost-aware computing, economic modeling, and optimization of resource usage to support sustainability goals.</li>
+
+        <li><strong>Track 4 – Performance Modeling, Analysis, and Optimization:</strong> Techniques for performance engineering, benchmarking, system tuning, and modeling of distributed, parallel, and cloud-based systems. Topics include optimization of scientific workflows, reproducibility-aware benchmarking methodologies, and pipeline performance engineering.</li>
+
+        <li><strong>Track 5 – Distributed Systems Security, Privacy, and Reliability:</strong> Innovative solutions for securing distributed infrastructures, enabling confidential computing, preserving data privacy, and enhancing cyber-resilience. Topics include trustworthy systems, intrusion detection, self-healing mechanisms, and approaches for building robust, fault-tolerant, and reliable computing platforms.</li>
+
+        <li><strong>Track 6 – Systems for AI/ML and Distributed Intelligence:</strong> Techniques and systems for scalable and efficient execution of AI/ML workloads across distributed platforms, addressing challenges in foundation models, Large Language Models (LLMs), model serving, and MLOps, including the compute continuum, osmotic computing, and liquid computing. Topics include edge intelligence, collaborative and federated learning, and system-level support for distributed AI.</li>
+      </ul>
+
+      <h1 id="dates">Important Dates</h1>
+
+      <ul>
+        <li>Abstract Submission Deadline: 8th December 2026 (AoE)</li>
+
+        <li>Paper Submission Deadline: 15th December 2026 (AoE)</li>
+
+        <li>Notification of Acceptance: 10th February 2027</li>
+
+        <li>Camera-Ready Submission: 15th March 2027</li>
+
+        <li>Conference Dates: 17-20 May 2027</li>
+      </ul>
+
+      <h1 id="submission-guidelines">Submission Guidelines</h1>
+
+      <ul>
+        <li>Submitted manuscripts should be structured as technical papers and may not exceed 10 letter size (8.5 x 11 inches) pages including references, figures and tables using the <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener">IEEE conference template</a>.</li>
+
+        <li>Author and reviewer anonymity: All submissions need to be double-blind.</li>
+
+        <li>Review criteria: All manuscripts will be reviewed and will be judged on correctness, originality, technical strength, significance, quality of presentation, and relevance to the conference attendees. Submitted papers must represent original unpublished research that is not currently under review for any other conference or journal.</li>
+
+        <li>IEEE Submission and Peer Review Policies should be read and understood before submission. Special care to timely topics like <a href="https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-journal-author/publishing-ethics/guidelines-and-policies/submission-and-peer-review-policies/#ai-generated-text" target="_blank" rel="noopener">“Guidelines for Artificial Intelligence (AI)-Generated Text”</a> is given.</li>
+
+        <li>When submitting the final accepted manuscript, authors may purchase up to two additional pages beyond the original 10 pages (excluding references) to address comments received from the reviewers.</li>
+
+        <li>Accepted papers will be submitted for possible inclusion into IEEE Xplore, subject to meeting IEEE Xplore’s scope and quality requirements.</li>
+      </ul>
+    </article>
+  </main>
+</div>

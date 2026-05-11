@@ -1,0 +1,47 @@
+  .ccgrid2027-hero-slide-1 {
+    background-image: url("https://hpcclab.org/wp-content/uploads/2026/04/background4.jpg");
+  }
+
+  .ccgrid2027-hero-slide-2 {
+    background-image: url("https://hpcclab.org/wp-content/uploads/2026/04/background5.webp");
+    animation-delay: 6s;
+  }
+
+  .ccgrid2027-hero-slide-3 {
+    background-image: url("https://hpcclab.org/wp-content/uploads/2026/04/background6.jpg");
+    animation-delay: 12s;
+  }
+
+  .ccgrid2027-hero-slide-4 {
+    background-image: url("https://hpcclab.org/wp-content/uploads/2026/04/background7.jpg");
+    animation-delay: 18s;
+  }
+  
+  .ccgrid2027-hero-slide-5 {
+    background-image: url("https://hpcclab.org/wp-content/uploads/2026/05/background8.jpg");
+    animation-delay: 24s;
+  }
+
+<div class="ccgrid2027-page">
+  <header class="ccgrid2027-hero" id="home">
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-1" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-2" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-3" aria-hidden="true"></span>
+    <div class="ccgrid2027-hero-logos" aria-label="Conference and host logos">
+      <span class="ccgrid2027-hero-logo ccgrid2027-hero-logo-ccgrid">
+        <img src="https://hpcclab.org/wp-content/uploads/2026/04/logo_ccgrid.png" alt="CCGrid 2027">
+      </span>
+      <span class="ccgrid2027-hero-logo ccgrid2027-hero-logo-unt">
+        <img src="https://hpcclab.org/wp-content/uploads/2026/04/unt_logo.png" alt="University of North Texas">
+      </span>
+    </div>
+    <div class="ccgrid2027-hero-content" aria-label="Conference highlights">
+      <h1 class="ccgrid2027-hero-title" style="font-size: clamp(1.75rem, 4.2vw, 3.3rem) !important;">The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing</h1>
+      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128205;</span>Dallas-Fort Worth, Texas, USA</span>
+      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#127963;</span>Hosted by the University of North Texas</span>
+      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128197;</span>17-20 May 2027</span>
+      <div class="ccgrid2027-button-row">
+        <a href="#call-for-papers" class="ccgrid2027-button">View CFP</a>
+      </div>
+    </div>
+  </header>
