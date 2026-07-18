@@ -46,7 +46,7 @@
     z-index: 1;
     margin: 0;
     color: #ffffff;
-    font-size: 2.75rem;
+    font-size: 2.1rem;
     line-height: 1.08;
     font-weight: 800;
   }
@@ -66,7 +66,8 @@
   .ccgrid2027-chairs-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 72px 30px;
+    align-items: start;
+    gap: 48px 30px;
   }
 
   .ccgrid2027-chair-section {
@@ -74,11 +75,14 @@
   }
 
   .ccgrid2027-chair-heading {
+    display: flex;
+    align-items: flex-end;
+    height: 3.75rem;
     margin: 0 0 16px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 3px solid var(--ccgrid-green);
     color: var(--ccgrid-green);
-    font-size: 1.35rem;
+    font-size: 1rem;
     line-height: 1.05;
     font-weight: 800;
     letter-spacing: 0.06em;
@@ -94,7 +98,7 @@
   .ccgrid2027-chair-list li {
     margin: 0;
     color: var(--ccgrid-muted);
-    font-size: 1rem;
+    font-size: 0.88rem;
     line-height: 1.5;
   }
 
@@ -124,7 +128,7 @@
   @media (max-width: 960px) {
     .ccgrid2027-chairs-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px 24px;
+      gap: 40px 24px;
     }
   }
 
@@ -141,16 +145,17 @@
     }
 
     .ccgrid2027-chairs-hero h1 {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
 
     .ccgrid2027-chairs-grid {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 32px;
     }
 
     .ccgrid2027-chair-heading {
-      font-size: 1.1rem;
+      height: 3.4rem;
+      font-size: 0.9rem;
       letter-spacing: 0.05em;
     }
   }
@@ -220,6 +225,17 @@
         <ul class="ccgrid2027-chair-list">
           <li><strong>Jorge G. Barbosa</strong>, University of Porto, Portugal</li>
           <li><strong>Tomasz Szydlo</strong>, Newcastle University, UK</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Publicity Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Carla Osthoff</strong>, National Laboratory for Scientific Computing - LNCC, Brazil</li>
+          <li><strong>Hojjat Baghban</strong>, Chang Gung University, Taiwan</li>
+          <li><strong>Minxian Xu</strong>, Chinese Academy of Sciences, China</li>
+          <li><strong>Reza Farahani</strong>, Technical University Wien, Austria</li>
+          <li><strong>Saptarshi Debroy</strong>, The City University of New York (CUNY), US</li>
         </ul>
       </section>
 
