@@ -1,0 +1,59 @@
+=============================================
+IEEE CCGRID 2027: CALL FOR WORKSHOP PROPOSALS
+=============================================
+The 27th IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2027)
+In conjunction with the 11th IEEE International Conference on Fog and Edge Computing (ICFEC 2027)
+In conjunction with the IEEE International Conference on Quantum Computing and Communication Systems (QSys 2027)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+May 24-27, 2027, Dallas-Fort Worth, Texas, USA
+https://hpcclab.org/ccgrid27/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid 2027) invites workshop proposals to be held in conjunction with the event.
+Workshops serve as platforms for discussions on specific subjects, new research areas, or interdisciplinary fields. Organizers have the flexibility to design these workshops in various ways, including invited lectures, panel discussions, presentations of ongoing work, peer-reviewed short or full papers, or a mix of these elements.
+
+Workshops will be scheduled in parallel sessions on the opening day of the conference (May 24th, 2027). While it is suggested that workshops last for half a day, they can be extended to a full day based on the interest, available space, and preferences of the organizers. 
+
+The acceptance rate for workshops should be aligned closely with that of CCGrid 2027 (between 20% and 25%). To qualify for publication, all accepted papers must be peer reviewed by at least two reviewers. Accepted workshop papers will be included in the CCGrid 2027 workshop proceedings, which will be available online at the IEEE Xplore Digital Library. It is recommended that organizers design workshops for groups of 20-40 people to maximize their effectiveness and encourage meaningful discussions. For each accepted workshop paper, at least one author is required to register for the CCGrid conference at standard registration rates and must present the paper.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Submission Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+Workshops should ideally correspond to one or more topics of interest at the CCGrid 2027 conference. Workshop proposals must be in PDF format and include the following:
+- Name and acronyms of the workshop.
+- An abstract (half to a page) explaining how the proposed workshop aligns or complements the topics of CCGrid.
+- A brief description of why and to whom the workshop would be of interest.
+- List of workshop organizers, including their affiliations, emails, and short biographies (up to ten lines for each organizer).
+- List of potential program committee members and their prior experience in organizing workshops/conferences.
+- List of topics of interest.
+- Description of the expected structure of the workshop (papers, invited talks, panel discussions, etc.) and its desired length (i.e. half or full day).
+- A brief history of the previous occurrences of the workshop (with links to their websites, if available) highlighting the estimated number of attendees as well as the number of submitted and accepted papers.
+- A publicity plan to attract submissions and attendees, highlighting the expected number of anticipated submissions, accepted papers, and attendees.
+- List of possible related special issues in indexed journals.
+- Preliminary CFP (call for papers) with targeted deadlines.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Important Dates for Workshop Organizers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Deadline for workshop proposals: September 21, 2026.
+- Proposal acceptance notification: October 7, 2026.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Important Dates for Workshop Authors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Workshop paper submission: February 15, 2027 (recommended)
+- Paper acceptance notification: March 8, 2027 (firm)
+- Camera ready paper submission: March 16, 2027 (firm)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Workshop Proposal Submission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A PDF version of the workshop proposal must be emailed to the Workshop Chairs for assessment. The review panel provides their decisions, which may include recommendations for enhancement before the specified deadline.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Workshop Chairs and Contacts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For further enquiries or information, please contact: 
+- Javid Taheri, Karlstad University (Sweden): javid.taheri@kau.se, javid.taheri@qub.ac.uk
+- Adel N. Toosi, University of Melbourne (Australia): adel.toosi@unimelb.edu.au

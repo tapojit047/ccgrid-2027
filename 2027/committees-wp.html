@@ -1,0 +1,631 @@
+<style>
+  .ccgrid2027-chairs-page {
+    --ccgrid-green: #0a6a3b;
+    --ccgrid-text: #28332e;
+    --ccgrid-muted: #4d5c55;
+    font-family: Arial, sans-serif;
+    color: var(--ccgrid-text);
+    background: #ffffff;
+  }
+
+  .ccgrid2027-chairs-page,
+  .ccgrid2027-chairs-page * {
+    box-sizing: border-box;
+  }
+
+  .ccgrid2027-site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    color: #ffffff;
+    background: #004f2d;
+    box-shadow: 0 4px 16px rgba(0, 49, 28, 0.18);
+  }
+
+  .ccgrid2027-site-nav {
+    width: min(1200px, calc(100% - 32px));
+    min-height: 68px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .ccgrid2027-site-menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-menu-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ccgrid2027-site-menu li {
+    margin: 0;
+  }
+
+  .ccgrid2027-site-dropdown {
+    position: relative;
+  }
+
+  .ccgrid2027-site-dropdown-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-dropdown-label {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 34px 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-dropdown-label::after {
+    content: "\25BE";
+    position: absolute;
+    right: 15px;
+    font-size: 0.75em;
+  }
+
+  .ccgrid2027-site-dropdown-label:hover,
+  .ccgrid2027-site-dropdown-toggle:focus + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-toggle:checked + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-label.is-current {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    transform: translateX(-50%);
+    border-radius: 0 0 8px 8px;
+    background: #004f2d;
+    box-shadow: 0 12px 24px rgba(0, 49, 28, 0.24);
+    list-style: none;
+  }
+
+  .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-dropdown-label {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-submenu a {
+    min-height: 42px;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .ccgrid2027-site-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-menu a:hover,
+  .ccgrid2027-site-menu a:focus,
+  .ccgrid2027-site-menu a[aria-current="page"] {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-footer {
+    width: 100%;
+    padding: 26px 20px;
+    color: #ffffff;
+    background: #004f2d;
+  }
+
+  .ccgrid2027-site-footer-inner {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ccgrid2027-site-footer p {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .ccgrid2027-site-footer a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-site-footer a:hover,
+  .ccgrid2027-site-footer a:focus {
+    color: #ffffff;
+  }
+
+  .ccgrid2027-chairs-shell {
+    width: min(1200px, calc(100% - 22px));
+    margin: 0 auto;
+    padding: 40px 0 34px;
+  }
+
+  .ccgrid2027-chairs-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 42px;
+    padding: 34px 40px 36px;
+    border-radius: 24px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #005c34 0%, #00773d 58%, #3f9b67 100%);
+  }
+
+  .ccgrid2027-chairs-hero::after {
+    content: "";
+    position: absolute;
+    right: -74px;
+    bottom: -104px;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.13);
+    pointer-events: none;
+  }
+
+  .ccgrid2027-chairs-hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #ffffff;
+    font-size: 2.1rem;
+    line-height: 1.08;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-chairs-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .ccgrid2027-chairs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 48px 30px;
+  }
+
+  .ccgrid2027-chair-section {
+    min-width: 0;
+  }
+
+  .ccgrid2027-chair-heading {
+    display: flex;
+    align-items: flex-end;
+    height: 3.75rem;
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--ccgrid-green);
+    color: var(--ccgrid-green);
+    font-size: 1rem;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .ccgrid2027-chair-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ccgrid2027-chair-list li {
+    margin: 0;
+    color: var(--ccgrid-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .ccgrid2027-chair-list li + li {
+    margin-top: 12px;
+  }
+
+  .ccgrid2027-chair-list strong {
+    color: var(--ccgrid-text);
+    font-weight: 800;
+  }
+
+  .ccgrid2027-chair-list a {
+    color: var(--ccgrid-green);
+    text-decoration: none;
+  }
+
+  .ccgrid2027-chair-list a strong {
+    color: inherit;
+  }
+
+  .ccgrid2027-chair-list a:hover,
+  .ccgrid2027-chair-list a:focus {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 960px) {
+    .ccgrid2027-chairs-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px 24px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .ccgrid2027-site-nav {
+      min-height: 62px;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 11px 0;
+    }
+
+    .ccgrid2027-site-menu-button {
+      display: inline-flex;
+    }
+
+    .ccgrid2027-site-menu {
+      display: none;
+      flex: 0 0 100%;
+      flex-direction: column;
+      margin-top: 11px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .ccgrid2027-site-menu-toggle:checked ~ .ccgrid2027-site-menu {
+      display: flex;
+    }
+
+    .ccgrid2027-site-menu a {
+      min-height: 44px;
+      padding: 9px 10px;
+      border-bottom: 0;
+      border-left: 4px solid transparent;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-dropdown,
+    .ccgrid2027-site-dropdown-label {
+      width: 100%;
+    }
+
+    .ccgrid2027-site-dropdown-label {
+      min-height: 44px;
+      padding: 9px 34px 9px 10px;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-submenu {
+      position: static;
+      width: 100%;
+      padding: 4px 0 4px 16px;
+      transform: none;
+      border-radius: 0;
+      background: rgba(0, 49, 28, 0.52);
+      box-shadow: none;
+    }
+
+    .ccgrid2027-site-submenu a {
+      min-height: 40px;
+      padding: 8px 10px;
+    }
+
+    .ccgrid2027-site-menu a:hover,
+    .ccgrid2027-site-menu a:focus,
+    .ccgrid2027-site-menu a[aria-current="page"] {
+      border-left-color: #ffffff;
+    }
+
+    .ccgrid2027-chairs-shell {
+      width: min(100% - 22px, 1200px);
+      padding: 24px 0 18px;
+    }
+
+    .ccgrid2027-chairs-hero {
+      margin-bottom: 28px;
+      padding: 26px 22px 28px;
+      border-radius: 18px;
+    }
+
+    .ccgrid2027-chairs-hero h1 {
+      font-size: 1.6rem;
+    }
+
+    .ccgrid2027-chairs-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .ccgrid2027-chair-heading {
+      height: 3.4rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+  }
+  @media (hover: none), (pointer: coarse) {
+    .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+    .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+      display: none;
+    }
+
+    .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+      display: block;
+    }
+  }
+</style>
+
+<div class="ccgrid2027-chairs-page">
+  <header class="ccgrid2027-site-header">
+    <nav class="ccgrid2027-site-nav" aria-label="Primary navigation">
+      <input class="ccgrid2027-site-menu-toggle" type="checkbox" id="ccgrid2027-site-menu-toggle">
+      <label class="ccgrid2027-site-menu-button" for="ccgrid2027-site-menu-toggle" aria-label="Toggle navigation menu">&#9776;</label>
+      <ul class="ccgrid2027-site-menu">
+        <li><a href="wordpress-embed.html">Home</a></li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-calls-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-calls-toggle">Calls</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="wordpress-embed.html#call-for-papers">Call for Papers</a></li>
+            <li><a href="workshop-proposals-wp.html">Call for Workshops</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-committees-toggle">
+          <label class="ccgrid2027-site-dropdown-label is-current" for="ccgrid2027-committees-toggle">Committees</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="committees-wp.html" aria-current="page">Organizing Committee</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-history-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-history-toggle">History</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://ccgrid2026.cdms.westernsydney.edu.au/index.html" target="_blank" rel="noopener">2026</a></li>
+            <li><a href="https://site.uit.no/ccgrid2025/" target="_blank" rel="noopener">2025</a></li>
+            <li><a href="https://clouds.cis.unimelb.edu.au/~rbuyya/ccgrid/" target="_blank" rel="noopener">Others</a></li>
+          </ul>
+        </li>
+        <li><a href="patrons-wp.html">Patrons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="ccgrid2027-chairs-shell">
+    <header class="ccgrid2027-chairs-hero">
+      <h1>Organizing Committee</h1>
+    </header>
+
+    <h2 class="ccgrid2027-chairs-title">CCGrid 2027 Committee Chairs</h2>
+
+    <section class="ccgrid2027-chairs-grid" aria-label="CCGrid 2027 committee chairs">
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">General Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Mohsen Amini</strong>, University of North Texas, US</li>
+          <li><strong>Maria Fazio</strong>, University of Messina, Italy</li>
+          <li><strong>Carlos Varela</strong>, Rensselaer Polytechnic Institute, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Program Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Valeria Cardellini</strong>, University of Rome Tor Vergata, Italy</li>
+          <li><strong>Reza Farivar</strong>, University of Illinois at Urbana-Champaign, US</li>
+          <li><strong>Song Fu</strong>, University of North Texas, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Workshop Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Javid Taheri</strong>, Karlstad University, Sweden</li>
+          <li><strong>Adel N. Toosi</strong>, The University of Melbourne, Australia</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Poster Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Gabriele Russo Russo</strong>, University of Rome Tor Vergata, Italy</li>
+          <li><strong>Zhiming Zhao</strong>, University of Amsterdam, Netherlands</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Scale Challenge Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Lorenzo Carnevale</strong>, University of Messina, Italy</li>
+          <li><strong>Vijayalakshmi Saravanan</strong>, University of Texas Tyler, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Artifact Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Jorge G. Barbosa</strong>, University of Porto, Portugal</li>
+          <li><strong>Tomasz Szydlo</strong>, Newcastle University, UK</li>
+          <li><strong>Qing Yang</strong>, University of North Texas, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Doctoral Symposium Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><a href="https://cv.hal.science/carlos-barrios" target="_blank" rel="noopener"><strong>Carlos Jaime Barrios Hernandez</strong></a>, Industrial University of Santander, Colombia</li>
+          <li><a href="https://research.monash.edu/en/persons/mohammad-goudarzi/" target="_blank" rel="noopener"><strong>Mohammad Goudarzi</strong></a>, Monash University, Australia</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Website and Online Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><a href="https://tapojit047.github.io/" target="_blank" rel="noopener"><strong>Tapajit Chandra Paul</strong></a>, University of North Texas, US</li>
+          <li><strong>Yogesh Sharma</strong>, University of Regina, Canada</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Local Arrangements Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><a href="https://haihua0913.github.io/index.html" target="_blank" rel="noopener"><strong>Haihua Chen</strong></a>, University of North Texas, US</li>
+          <li><a href="https://habibi6010.github.io/" target="_blank" rel="noopener"><strong>Mostafa Habibi</strong></a>, University of Texas at Dallas, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Publication Chair</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><a href="https://www.ic.unicamp.br/~bit/" target="_blank" rel="noopener"><strong>Luiz Fernando Bittencourt</strong></a>, University of Campinas, Brazil</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Financial Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Ajita Rattani</strong>, University of North Texas, US</li>
+          <li><strong>Cihan Tunc</strong>, University of North Texas, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Community Stewardship Committee</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><a href="https://facultyinfo.unt.edu/faculty-profile?profile=sb0837" target="_blank" rel="noopener"><strong>Sanjukta Bhowmick</strong></a>, University of North Texas, US</li>
+          <li><a href="http://www.iitg.ac.in/hemangee" target="_blank" rel="noopener"><strong>Hemangee Kalpesh Kapoor</strong></a>, Indian Institute of Technology Guwahati, India</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Travel Grant Committee</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><a href="https://lawfulcomputing.org/shastri.htm" target="_blank" rel="noopener"><strong>Supreeth Shastri</strong></a>, University of North Texas, US</li>
+          <li><a href="https://sina88.github.io/" target="_blank" rel="noopener"><strong>Narges Mehran</strong></a>, Salzburg Research and University of Salzburg, Austria</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Industry Chair</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Jia Rao</strong>, The University of Texas at Arlington, US</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-chair-section">
+        <h2 class="ccgrid2027-chair-heading">Publicity Chairs</h2>
+        <ul class="ccgrid2027-chair-list">
+          <li><strong>Hojjat Baghban</strong>, Chang Gung University, Taiwan</li>
+          <li><strong>Saptarshi Debroy</strong>, The City University of New York (CUNY), US</li>
+          <li><strong>Reza Farahani</strong>, Technical University Wien, Austria</li>
+          <li><strong>Carla Osthoff</strong>, National Laboratory for Scientific Computing - LNCC, Brazil</li>
+          <li><strong>Minxian Xu</strong>, Chinese Academy of Sciences, China</li>
+          <li><strong>Yaser Jararweh</strong>, <a href="mailto:yaser.amd@gmail.com">yaser.amd@gmail.com</a></li>
+        </ul>
+      </section>
+
+    </section>
+  </div>
+
+  <footer class="ccgrid2027-site-footer">
+    <div class="ccgrid2027-site-footer-inner">
+      <p>&copy; 2027 CCGrid. All rights reserved.</p>
+      <p>Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a> · Contact: <a href="mailto:ccgrid2027@gmail.com">ccgrid2027@gmail.com</a></p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var toggles = document.querySelectorAll(".ccgrid2027-site-dropdown-toggle");
+
+    document.addEventListener("click", function (event) {
+      var clickedDropdown = event.target.closest(".ccgrid2027-site-dropdown");
+
+      toggles.forEach(function (toggle) {
+        if (!clickedDropdown || !clickedDropdown.contains(toggle)) {
+          toggle.checked = false;
+        }
+      });
+
+      if (!clickedDropdown && document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        toggles.forEach(function (toggle) {
+          toggle.checked = false;
+        });
+      }
+    });
+  }());
+</script>

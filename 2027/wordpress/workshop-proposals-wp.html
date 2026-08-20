@@ -1,0 +1,615 @@
+<style>
+  .ccgrid2027-workshops-page {
+    --ccgrid-green: #0a6a3b;
+    --ccgrid-green-dark: #004f2d;
+    --ccgrid-green-soft: #eaf4ee;
+    --ccgrid-text: #28332e;
+    --ccgrid-muted: #4d5c55;
+    --ccgrid-border: #d9e5dd;
+    font-family: Arial, sans-serif;
+    color: var(--ccgrid-text);
+    background: #f6f8f6;
+  }
+
+  .ccgrid2027-workshops-page,
+  .ccgrid2027-workshops-page * {
+    box-sizing: border-box;
+  }
+
+  .ccgrid2027-site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    color: #ffffff;
+    background: #004f2d;
+    box-shadow: 0 4px 16px rgba(0, 49, 28, 0.18);
+  }
+
+  .ccgrid2027-site-nav {
+    width: min(1200px, calc(100% - 32px));
+    min-height: 68px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .ccgrid2027-site-menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-menu-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ccgrid2027-site-menu li {
+    margin: 0;
+  }
+
+  .ccgrid2027-site-dropdown {
+    position: relative;
+  }
+
+  .ccgrid2027-site-dropdown-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-dropdown-label {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 34px 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-dropdown-label::after {
+    content: "\25BE";
+    position: absolute;
+    right: 15px;
+    font-size: 0.75em;
+  }
+
+  .ccgrid2027-site-dropdown-label:hover,
+  .ccgrid2027-site-dropdown-toggle:focus + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-toggle:checked + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-label.is-current {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    transform: translateX(-50%);
+    border-radius: 0 0 8px 8px;
+    background: #004f2d;
+    box-shadow: 0 12px 24px rgba(0, 49, 28, 0.24);
+    list-style: none;
+  }
+
+  .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-dropdown-label {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-submenu a {
+    min-height: 42px;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .ccgrid2027-site-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-menu a:hover,
+  .ccgrid2027-site-menu a:focus,
+  .ccgrid2027-site-menu a[aria-current="page"] {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-footer {
+    width: 100%;
+    padding: 26px 20px;
+    color: #ffffff;
+    background: #004f2d;
+  }
+
+  .ccgrid2027-site-footer-inner {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ccgrid2027-site-footer p {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .ccgrid2027-site-footer a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-site-footer a:hover,
+  .ccgrid2027-site-footer a:focus {
+    color: #ffffff;
+  }
+
+  .ccgrid2027-workshops-shell {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 40px 0 52px;
+  }
+
+  .ccgrid2027-workshops-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 42px;
+    border-radius: 24px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #004f2d 0%, #00773d 62%, #3f9b67 100%);
+    box-shadow: 0 16px 38px rgba(0, 79, 45, 0.18);
+  }
+
+  .ccgrid2027-workshops-hero::after {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: -150px;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+  }
+
+  .ccgrid2027-workshops-hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-workshops-card {
+    margin-bottom: 24px;
+    padding: 32px 36px;
+    border: 1px solid var(--ccgrid-border);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(20, 44, 34, 0.07);
+  }
+
+  .ccgrid2027-workshops-card h2 {
+    margin: 0 0 18px;
+    color: var(--ccgrid-green-dark);
+    font-size: 1.55rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-workshops-card h3 {
+    margin: 28px 0 12px;
+    color: var(--ccgrid-green-dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-workshops-card p,
+  .ccgrid2027-workshops-card li {
+    color: var(--ccgrid-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .ccgrid2027-workshops-card p {
+    margin: 0 0 18px;
+  }
+
+  .ccgrid2027-workshops-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ccgrid2027-workshops-card ul {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .ccgrid2027-workshops-card li + li {
+    margin-top: 10px;
+  }
+
+  .ccgrid2027-workshops-card a {
+    color: var(--ccgrid-green);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-workshops-lead {
+    border-top: 5px solid var(--ccgrid-green);
+  }
+
+  .ccgrid2027-workshops-event-details {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--ccgrid-border);
+  }
+
+  .ccgrid2027-workshops-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .ccgrid2027-workshops-columns .ccgrid2027-workshops-card {
+    margin-bottom: 24px;
+  }
+
+  .ccgrid2027-workshops-date-list {
+    padding: 0 !important;
+    list-style: none;
+  }
+
+  .ccgrid2027-workshops-date-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--ccgrid-border);
+  }
+
+  .ccgrid2027-workshops-date-list li:first-child {
+    padding-top: 0;
+  }
+
+  .ccgrid2027-workshops-date-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .ccgrid2027-workshops-date-list strong {
+    color: var(--ccgrid-text);
+    text-align: right;
+  }
+
+  .ccgrid2027-workshops-contact {
+    padding: 16px 18px;
+    border-left: 4px solid var(--ccgrid-green);
+    border-radius: 0 10px 10px 0;
+    background: var(--ccgrid-green-soft);
+  }
+
+  .ccgrid2027-workshops-contact + .ccgrid2027-workshops-contact {
+    margin-top: 14px;
+  }
+
+  .ccgrid2027-workshops-contact strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ccgrid-text);
+  }
+
+  @media (max-width: 780px) {
+    .ccgrid2027-workshops-columns {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .ccgrid2027-workshops-date-list li {
+      display: block;
+    }
+
+    .ccgrid2027-workshops-date-list strong {
+      display: block;
+      margin-top: 3px;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .ccgrid2027-site-nav {
+      min-height: 62px;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 11px 0;
+    }
+
+    .ccgrid2027-site-menu-button {
+      display: inline-flex;
+    }
+
+    .ccgrid2027-site-menu {
+      display: none;
+      flex: 0 0 100%;
+      flex-direction: column;
+      margin-top: 11px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .ccgrid2027-site-menu-toggle:checked ~ .ccgrid2027-site-menu {
+      display: flex;
+    }
+
+    .ccgrid2027-site-menu a {
+      min-height: 44px;
+      padding: 9px 10px;
+      border-bottom: 0;
+      border-left: 4px solid transparent;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-dropdown,
+    .ccgrid2027-site-dropdown-label {
+      width: 100%;
+    }
+
+    .ccgrid2027-site-dropdown-label {
+      min-height: 44px;
+      padding: 9px 34px 9px 10px;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-submenu {
+      position: static;
+      width: 100%;
+      padding: 4px 0 4px 16px;
+      transform: none;
+      border-radius: 0;
+      background: rgba(0, 49, 28, 0.52);
+      box-shadow: none;
+    }
+
+    .ccgrid2027-site-submenu a {
+      min-height: 40px;
+      padding: 8px 10px;
+    }
+
+    .ccgrid2027-site-menu a:hover,
+    .ccgrid2027-site-menu a:focus,
+    .ccgrid2027-site-menu a[aria-current="page"] {
+      border-left-color: #ffffff;
+    }
+
+    .ccgrid2027-workshops-shell {
+      width: min(100% - 22px, 1100px);
+      padding: 24px 0 30px;
+    }
+
+    .ccgrid2027-workshops-hero {
+      padding: 30px 22px;
+      border-radius: 18px;
+    }
+
+    .ccgrid2027-workshops-hero h1 {
+      font-size: 2rem;
+    }
+
+    .ccgrid2027-workshops-card {
+      padding: 25px 21px;
+      border-radius: 14px;
+    }
+  }
+  @media (hover: none), (pointer: coarse) {
+    .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+    .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+      display: none;
+    }
+
+    .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+      display: block;
+    }
+  }
+</style>
+
+<div class="ccgrid2027-workshops-page">
+  <header class="ccgrid2027-site-header">
+    <nav class="ccgrid2027-site-nav" aria-label="Primary navigation">
+      <input class="ccgrid2027-site-menu-toggle" type="checkbox" id="ccgrid2027-site-menu-toggle">
+      <label class="ccgrid2027-site-menu-button" for="ccgrid2027-site-menu-toggle" aria-label="Toggle navigation menu">&#9776;</label>
+      <ul class="ccgrid2027-site-menu">
+        <li><a href="https://hpcclab.org/ccgrid27/">Home</a></li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-calls-toggle">
+          <label class="ccgrid2027-site-dropdown-label is-current" for="ccgrid2027-calls-toggle">Calls</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://hpcclab.org/ccgrid27/#call-for-papers">Call for Papers</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1836" aria-current="page">Call for Workshops</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-committees-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-committees-toggle">Committees</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://hpcclab.org/?page_id=1620">Organizing Committee</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-history-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-history-toggle">History</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://ccgrid2026.cdms.westernsydney.edu.au/index.html" target="_blank" rel="noopener">2026</a></li>
+            <li><a href="https://site.uit.no/ccgrid2025/" target="_blank" rel="noopener">2025</a></li>
+            <li><a href="https://clouds.cis.unimelb.edu.au/~rbuyya/ccgrid/" target="_blank" rel="noopener">Others</a></li>
+          </ul>
+        </li>
+        <li><a href="https://hpcclab.org/?page_id=1846">Patrons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="ccgrid2027-workshops-shell">
+    <header class="ccgrid2027-workshops-hero">
+      <h1>Call for Workshop Proposals</h1>
+    </header>
+
+    <section class="ccgrid2027-workshops-card ccgrid2027-workshops-lead">
+      <p>The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid 2027) invites workshop proposals to be held in conjunction with the event.</p>
+      <p>Workshops serve as platforms for discussions on specific subjects, new research areas, or interdisciplinary fields. Organizers have the flexibility to design these workshops in various ways, including invited lectures, panel discussions, presentations of ongoing work, peer-reviewed short or full papers, or a mix of these elements.</p>
+      <p>Workshops will be scheduled in parallel sessions on the opening day of the conference (May 24th, 2027). While it is suggested that workshops last for half a day, they can be extended to a full day based on the interest, available space, and preferences of the organizers.</p>
+      <p>The acceptance rate for workshops should be aligned closely with that of CCGrid 2027 (between 20% and 25%). To qualify for publication, all accepted papers must be peer reviewed by at least two reviewers. Accepted workshop papers will be included in the CCGrid 2027 workshop proceedings, which will be available online at the IEEE Xplore Digital Library. It is recommended that organizers design workshops for groups of 20–40 people to maximize their effectiveness and encourage meaningful discussions. For each accepted workshop paper, at least one author is required to register for the CCGrid conference at standard registration rates and must present the paper.</p>
+    </section>
+
+    <section class="ccgrid2027-workshops-card">
+      <h2>Submission Requirements</h2>
+      <p>Workshops should ideally correspond to one or more topics of interest at the CCGrid 2027 conference. Workshop proposals must be in PDF format and include the following:</p>
+      <ul>
+        <li>Name and acronyms of the workshop.</li>
+        <li>An abstract (half to a page) explaining how the proposed workshop aligns or complements the topics of CCGrid.</li>
+        <li>A brief description of why and to whom the workshop would be of interest.</li>
+        <li>List of workshop organizers, including their affiliations, emails, and short biographies (up to ten lines for each organizer).</li>
+        <li>List of potential program committee members and their prior experience in organizing workshops/conferences.</li>
+        <li>List of topics of interest.</li>
+        <li>Description of the expected structure of the workshop (papers, invited talks, panel discussions, etc.) and its desired length (i.e. half or full day).</li>
+        <li>A brief history of the previous occurrences of the workshop (with links to their websites, if available) highlighting the estimated number of attendees as well as the number of submitted and accepted papers.</li>
+        <li>A publicity plan to attract submissions and attendees, highlighting the expected number of anticipated submissions, accepted papers, and attendees.</li>
+        <li>List of possible related special issues in indexed journals.</li>
+        <li>Preliminary CFP (call for papers) with targeted deadlines.</li>
+      </ul>
+    </section>
+
+    <div class="ccgrid2027-workshops-columns">
+      <section class="ccgrid2027-workshops-card">
+        <h2>Important Dates for Workshop Organizers</h2>
+        <ul class="ccgrid2027-workshops-date-list">
+          <li><span>Deadline for workshop proposals</span><strong>September 21, 2026</strong></li>
+          <li><span>Proposal acceptance notification</span><strong>October 7, 2026</strong></li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card">
+        <h2>Important Dates for Workshop Authors</h2>
+        <ul class="ccgrid2027-workshops-date-list">
+          <li><span>Workshop paper submission</span><strong>February 15, 2027 (recommended)</strong></li>
+          <li><span>Paper acceptance notification</span><strong>March 8, 2027 (firm)</strong></li>
+          <li><span>Camera-ready paper submission</span><strong>March 16, 2027 (firm)</strong></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="ccgrid2027-workshops-card">
+      <h2>Workshop Proposal Submission</h2>
+      <p>A PDF version of the workshop proposal must be emailed to the Workshop Chairs for assessment. The review panel provides their decisions, which may include recommendations for enhancement before the specified deadline.</p>
+    </section>
+
+    <section class="ccgrid2027-workshops-card">
+      <h2>Workshop Chairs and Contacts</h2>
+      <p>For further enquiries or information, please contact:</p>
+      <div class="ccgrid2027-workshops-contact">
+        <strong>Javid Taheri — Karlstad University, Sweden</strong>
+        <a href="mailto:javid.taheri@kau.se">javid.taheri@kau.se</a> · <a href="mailto:javid.taheri@qub.ac.uk">javid.taheri@qub.ac.uk</a>
+      </div>
+      <div class="ccgrid2027-workshops-contact">
+        <strong>Adel N. Toosi — University of Melbourne, Australia</strong>
+        <a href="mailto:adel.toosi@unimelb.edu.au">adel.toosi@unimelb.edu.au</a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="ccgrid2027-site-footer">
+    <div class="ccgrid2027-site-footer-inner">
+      <p>&copy; 2027 CCGrid. All rights reserved.</p>
+      <p>Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a> · Contact: <a href="mailto:ccgrid2027@gmail.com">ccgrid2027@gmail.com</a></p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var toggles = document.querySelectorAll(".ccgrid2027-site-dropdown-toggle");
+
+    document.addEventListener("click", function (event) {
+      var clickedDropdown = event.target.closest(".ccgrid2027-site-dropdown");
+
+      toggles.forEach(function (toggle) {
+        if (!clickedDropdown || !clickedDropdown.contains(toggle)) {
+          toggle.checked = false;
+        }
+      });
+
+      if (!clickedDropdown && document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        toggles.forEach(function (toggle) {
+          toggle.checked = false;
+        });
+      }
+    });
+  }());
+</script>
