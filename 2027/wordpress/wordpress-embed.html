@@ -294,19 +294,21 @@
     position: absolute;
     left: 5.4%;
     right: 5.4%;
-    bottom: 9%;
+    top: 50%;
     z-index: 2;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    transform: translateY(-50%);
+    text-align: center;
   }
 
   .ccgrid2027-hero-logos {
     position: absolute;
     left: 5.4%;
     right: 5.4%;
-    top: 15%;
+    top: 10%;
     z-index: 2;
     display: flex;
     flex-direction: row;
@@ -350,15 +352,30 @@
   }
 
   .ccgrid2027-page h1.ccgrid2027-hero-title {
-    flex-basis: 100%;
-    max-width: 980px;
-    margin: 0 0 18px;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 clamp(18px, 2cqi, 30px);
     color: #ffffff;
-    font-size: 38px;
-    font-size: clamp(22px, 3.4cqi, 38px);
+    font-size: 60px;
+    font-size: clamp(30px, 4cqi, 60px);
     line-height: 1.08;
     font-weight: 800;
+    text-align: center;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.36);
+  }
+
+  .ccgrid2027-hero-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
   }
 
   .ccgrid2027-meta-pill {
@@ -593,14 +610,13 @@
     .ccgrid2027-hero-content {
       left: 6%;
       right: 6%;
-      bottom: 7%;
-      gap: 8px;
+      top: 50%;
     }
 
     .ccgrid2027-hero-logos {
       left: 6%;
       right: 6%;
-      top: 15%;
+      top: 10%;
       gap: 7px;
     }
 
@@ -624,9 +640,14 @@
     }
 
     .ccgrid2027-page h1.ccgrid2027-hero-title {
-      margin-bottom: 12px;
-      font-size: 22px;
+      margin-bottom: 18px;
+      font-size: 28px;
+      font-size: clamp(15px, 4.4cqi, 28px);
       line-height: 1.12;
+    }
+
+    .ccgrid2027-hero-details {
+      gap: 8px;
     }
 
     .ccgrid2027-meta-pill {
@@ -704,10 +725,12 @@
       </span>
     </div>
     <div class="ccgrid2027-hero-content" aria-label="Conference highlights">
-      <h1 class="ccgrid2027-hero-title">The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing</h1>
-      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128205;</span>Dallas–Fort Worth, Texas, USA</span>
-      <span class="ccgrid2027-meta-pill"><img class="ccgrid2027-meta-logo" src="https://hpcclab.org/wp-content/uploads/2026/05/unt_logo.png" width="56" height="30" style="display: block !important; width: 56px !important; max-width: 56px !important; height: 30px !important; max-height: 30px !important; object-fit: contain !important;" alt="" aria-hidden="true"><span class="ccgrid2027-meta-text">Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a></span></span>
-      <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128197;</span>24-27 May 2027</span>
+      <h1 class="ccgrid2027-hero-title"><span class="ccgrid2027-hero-title-line">The 27th IEEE International Symposium</span><span class="ccgrid2027-hero-title-line">on Cluster, Cloud, and Internet Computing</span></h1>
+      <div class="ccgrid2027-hero-details">
+        <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128205;</span>Dallas–Fort Worth, Texas, USA</span>
+        <span class="ccgrid2027-meta-pill"><img class="ccgrid2027-meta-logo" src="https://hpcclab.org/wp-content/uploads/2026/05/unt_logo.png" width="56" height="30" style="display: block !important; width: 56px !important; max-width: 56px !important; height: 30px !important; max-height: 30px !important; object-fit: contain !important;" alt="" aria-hidden="true"><span class="ccgrid2027-meta-text">Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a></span></span>
+        <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128197;</span>24-27 May 2027</span>
+      </div>
     </div>
   </header>
 
