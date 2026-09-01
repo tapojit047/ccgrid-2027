@@ -1,0 +1,51 @@
+==================================
+IEEE CCGRID 2027: CALL FOR POSTERS
+==================================
+The 27th IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2027)
+In conjunction with the 11th IEEE International Conference on Fog and Edge Computing (ICFEC 2027)
+In conjunction with the IEEE International Conference on Quantum Computing and Communication Systems (QSys 2027)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+May 24-27, 2027, Dallas-Fort Worth, Texas, USA
+https://hpcclab.org/ccgrid27/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid2027) invites participants to submit original and unpublished works as posters to the CCGrid 2027 conference, presenting the latest breakthroughs in Cluster, Cloud and Internet computing. Topics should align with the conference scope and tracks.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Submission and Review Process
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Submissions must be short (2–4 pages) poster papers in the IEEE conference template via EasyChair (select the CCGrid2027 Posters track). 
+Submissions are peer-reviewed and evaluated on:
+
+- Quality of presentation
+- Scientific content
+- Relevance to the conference
+
+Authors of the accepted poster papers must register and present their posters at the conference. Accepted papers will appear in the CCGRIDW 2027 companion proceedings.
+
+BEST POSTER AWARD
+A Best Poster Award will be presented to the most accomplished CCGrid 2027 poster selected by the Poster PC. The winner receives the best poster certificate.
+
+~~~~~~~~~~~~~~~
+Important Dates 
+~~~~~~~~~~~~~~~
+- Poster paper submission: February 15, 2027 
+- Notification of Acceptance: March 8, 2027 
+- Camera ready: March 16, 2027 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Poster Presentation Information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By submitting, the authors agree to present the poster at CCGrid 2027 in Dallas-Fort Worth, Texas, USA.
+Presenters must be registered as CCGrid 2027 participants (only registered presenters’ posters are admitted).
+Posters will be displayed during the conference; presenters may give a brief presentation.
+Size/format of posters: Max A0 portrait (841×1189 mm) or A1 portrait (594×841 mm).
+Presenters create, print, and transport posters. 
+Organizers provide boards, numbers, topic areas, tape, etc.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Posters Chairs and Contacts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For further enquiries or information, please contact: 
+- Gabriele Russo Russo, University of Rome Tor Vergata (Italy): russo.russo@ing.uniroma2.it
+- Zhiming Zhao, University of Amsterdam (Netherlands): Z.Zhao@uva.nl

@@ -1,0 +1,52 @@
+==========================================
+IEEE CCGRID 2027: CALL FOR SCALE CHALLENGE  
+==========================================
+The 27th IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2027)
+In conjunction with the 11th IEEE International Conference on Fog and Edge Computing (ICFEC 2027)
+In conjunction with the IEEE International Conference on Quantum Computing and Communication Systems (QSys 2027)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+May 24-27, 2027, Dallas-Fort Worth, Texas, USA
+https://hpcclab.org/ccgrid27/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The CCGrid International Scalable Computing Challenge (SCALE Challenge 2027) objective is to highlight and showcase real-world problem-solving using computing that scales.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TCSC SCALE Challenge Award
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Authors should submit technical short-papers that outline the nature of the problem being solved, the solution technique, and offer preliminary evidence of the scalability achieved. The technical committee will shortlist finalists from these proposals and invite them to present their work and offer a live demonstration of their system and/or software solution at the CCGrid 2027 conference, in Dallas-Fort Worth, Texas, USA.
+
+A panel of experts will select a first-prize winner at the conference, who will be presented with the TCSC SCALE Challenge award for 2027 with a cash prize of US$1000 sponsored by IEEE TCSC.
+
+~~~~~~~~~~~~~~~
+Important Dates 
+~~~~~~~~~~~~~~~
+- Abstract: February 10, 2027 
+- Submission: February 15, 2027 
+- Notification of Acceptance: March 8, 2027 
+- Camera ready: March 16, 2027 
+
+~~~~~~~~~~~~~~~~~~~~~
+Submission Guidelines
+~~~~~~~~~~~~~~~~~~~~~
+Proposals may be submitted as a short paper (up to 6 pages, including figures and tables but excluding references) in the IEEE conference template via EasyChair (select the CCGrid2027 SCALE Challenge track). 
+
+The proposals should use the following sections and clearly outline:
+- Problem Identification: an overview of the problem being solved and the techniques employed.
+- Motivation: the motivating application scenario and its scaling requirements.
+- Material and Methods: the proposed solution, including system architecture, underlying concepts and technologies used, and the innovative aspects of the solution.
+- Results: performance metrics (number of cores, computational throughput, I/O bandwidth, data/metadata operations, etc.), preliminary empirical evidence, and a qualitative description of how the application scales – scale-up, scale-out or any other type of scaling.
+- Discussion: impact of the solution, including its extensibility, the uniqueness of the solutions and the results, and the extent to which the proposed solution pushes the envelope in scalable computing.
+- State of the Art: an analysis of the solution and technology employed in contrast to related and alternative approaches from research and technology.
+
+Based on the above metrics, the submissions will undergo a single-blinded peer review by a program committee. Accepted papers will be published through the IEEE Xplore digital library as part of the CCGRIDW 2027 companion proceedings.
+
+By submitting, the authors agree to present their work at CCGrid 2027 in Dallas-Fort Worth, Texas, USA.
+One author of each accepted proposal must be registered as CCGrid 2027 participants and present their work and demonstration in person at the special SCALE Challenge session. Participation by students and early-career researchers, especially in leadership roles, is strongly encouraged.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Scale Challenge Chairs and Contacts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For further enquiries or information, please contact: 
+- Lorenzo Carnevale, University of Messina (Italy): lcarnevale@unime.it
+- Vijayalakshmi Saravanan, University of Texas Tyler (US): vijayalakshmi.saravanan@utdallas.edu
