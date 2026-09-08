@@ -1,0 +1,97 @@
+=============================================
+IEEE CCGRID 2027: CALL FOR TUTORIAL PROPOSALS
+=============================================
+The 27th IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2027)
+In conjunction with the 11th IEEE International Conference on Fog and Edge Computing (ICFEC 2027)
+In conjunction with the IEEE International Conference on Quantum Computing and Communication Systems (QSys 2027)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+May 24-27, 2027, Dallas-Fort Worth, Texas, USA
+https://hpcclab.org/ccgrid27/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid 2027) invites proposals for tutorials to be held in conjunction with the conference.
+
+Tutorials provide an opportunity for researchers, practitioners, and industry experts to introduce conference participants to emerging technologies, established methods, practical tools, and important developments related to cluster, cloud, edge, Internet, and distributed computing.
+
+We particularly welcome tutorials that provide an accessible and engaging introduction to a topic while also offering sufficient technical depth for researchers and practitioners. Tutorials may combine lectures with hands-on exercises, demonstrations, case studies, interactive discussions, or practical examples.
+
+Tutorials are expected to be approximately 2 hours in duration. Proposals for longer sessions may also be considered where justified by the content and format, subject to scheduling and room availability.
+
+Tutorials will be scheduled during CCGrid 2027, subject to the final program and number of accepted tutorials.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Topics of Interest
+~~~~~~~~~~~~~~~~~~~~~~~
+Tutorial topics should fall within or complement the scope of CCGrid 2027, including, but not limited to:
+- Cluster, cloud, edge, and distributed computing.
+- High-performance and heterogeneous computing.
+- Distributed systems and applications.
+- Cloud-native systems, containers, microservices, and serverless computing.
+- Resource management, scheduling, elasticity, and autoscaling.
+- Systems for AI/ML, distributed training, and inference.
+- Foundation-model, generative-AI, and Agentic-AI systems.
+- Edge AI and distributed intelligence.
+- Storage systems and data management.
+- Networking and communication systems.
+- Security, privacy, reliability, and resilience.
+- Sustainable and energy-efficient computing.
+- Emerging computing architectures and technologies.
+- Performance analysis, benchmarking, observability, and systems tools.
+
+Proposals covering other timely topics relevant to the CCGrid community are also encouraged.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Submission Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+Tutorial proposals must be in PDF format and include the following:
+- Tutorial title.
+- Names, affiliations, and contact details of the presenter(s).
+- An abstract describing the tutorial and its relevance to the CCGrid community.
+- Motivation and learning objectives, including what participants are expected to learn.
+- Intended audience and any expected background or prerequisites.
+- Detailed outline of the tutorial, including an approximate schedule.
+- Delivery format, indicating whether the tutorial will include lectures, hands-on exercises, demonstrations, discussions, or other interactive elements.
+- Short biography of each presenter, highlighting relevant expertise.
+- Previous tutorial experience, if applicable, including links to previous editions or related materials.
+- Expected number of participants.
+- Any special equipment, software, network, or room requirements.
+
+Tutorial proposals should preferably be concise and no more than 2 pages, excluding presenter biographies.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Evaluation Criteria
+~~~~~~~~~~~~~~~~~~~~~~~
+Tutorial proposals will be evaluated based on:
+- Relevance to the CCGrid community.
+- Timeliness and importance of the topic.
+- Educational and technical value.
+- Clarity and organization of the proposed content.
+- Suitability for the intended audience.
+- Qualifications and expertise of the presenters.
+- Potential to attract and engage conference participants.
+- Complementarity with other tutorials and the CCGrid technical program.
+
+Preference may be given to tutorials that provide participants with practical knowledge, reusable techniques, tools, or hands-on experience in addition to presenting technical concepts.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Important Dates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Deadline for tutorial proposals: September 21, 2026.
+- Proposal acceptance notification: October 7, 2026.
+- Tutorials: During CCGrid 2027, subject to the final program and number of accepted tutorials.
+
+All deadlines are Anywhere on Earth (AoE).
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tutorial Proposal Submission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A PDF version of the tutorial proposal must be emailed to the Tutorial/Workshop Chairs for assessment. The review panel may provide recommendations for refinement before final acceptance.
+
+Accepted tutorial presenters are expected to deliver their tutorial in person at CCGrid 2027 in Dallas-Fort Worth, Texas, USA.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tutorial Chairs and Contacts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For further enquiries or information, please contact:
+- Javid Taheri, Karlstad University (Sweden): javid.taheri@kau.se, javid.taheri@qub.ac.uk
+- Adel N. Toosi, University of Melbourne (Australia): adel.toosi@unimelb.edu.au
