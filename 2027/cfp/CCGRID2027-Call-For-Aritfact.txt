@@ -1,0 +1,103 @@
+==========================================
+IEEE CCGRID 2027: CALL FOR ARTIFACTS 
+==========================================
+The 27th IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2027)
+In conjunction with the 11th IEEE International Conference on Fog and Edge Computing (ICFEC 2027)
+In conjunction with the IEEE International Conference on Quantum Computing and Communication Systems (QSys 2027)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+May 24-27, 2027, Dallas-Fort Worth, Texas, USA
+https://hpcclab.org/ccgrid27/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CCGrid 2027 will award three IEEE reproducibility badges to accepted main research track papers:
+1. Open Research Objects (ORO)
+2. Reusable/Research Objects Reviewed (ROR)
+3. Results Reproduced (ROR-R)
+
+Artifact evaluation is post-acceptance only and does not influence acceptance decisions. Authors of accepted main research-track papers may request badges by submitting the artifacts and a 2-page description. If successfully reviewed, include the 2-page description and the awarded badge logo in the camera-ready submission.
+
+Hosting software/data on GitHub/GitLab isn’t sufficient; assign a persistent identifier (e.g., via Zenodo, figshare). We recommend repositories like Zenodo, Dryad, or figshare to promote FAIR principles.
+
+
+~~~~~~~~~~~~~~~~~~~~~
+Description of Badges
+~~~~~~~~~~~~~~~~~~~~~
+1. Open Research Objects (ORO)
+Indicates that author-created digital objects (data/code) are permanently stored in a public repository with a globally unique identifier, guaranteed persistence, and an open license to maximize access. Aligns with ACM “Artifacts Available” and COS “Open Data/Materials” for digital objects.
+The AEC and authors decide what objects are “relevant”. Provide enough documentation for reviewers to understand core functionality and data context.
+
+Review criteria
+- Availability: Public repository with global identifier and guaranteed persistence.
+- License: Open license maximizing accessibility (e.g., OSI/CC/public domain).
+- Authorship: Reasonable and complete authorship attached to the archived artifact.
+- Documentation: For software: core functionality overview. For data: context, description, source, and usage in the paper. Metadata accessible for relevant physical objects.
+
+2. Reusable/Research Objects Reviewed (ROR)
+Higher-level than ORO; requires ORO. Corresponds to IEEE “Code Reviewed.” All author-created digital objects used in the research (data/software) are reviewed.
+
+Software review criteria
+- Documentation: Statement of need/function, install instructions, usage examples, API docs.
+- Functionality: Reviewers can install and verify core functionality on commodity hardware with step-by-step instructions.
+- Testing: Documented manual checks (e.g., sample input & expected output) and ideally an automated test suite with CI (e.g., GitHub Actions).
+
+Data review criteria
+- Documentation: Dataset context, description, source, and how it’s used in the paper.
+- Functionality: Enable reuse beyond the paper; for proprietary formats, include code to access data programmatically.
+
+3. Results Reproduced (ROR-R)
+Highest tier, awarded when evaluators reproduce the paper’s key results using the authors’ objects, methods, code, and analysis conditions. Focus is on reproducing behavior/claims, not exact values (especially with hardware dependence).
+
+Scope
+- Reproduce behavior: Attempt on the same hardware where feasible; otherwise collaborate to establish equivalent behavior on commodity hardware.
+- Reproduce central results: AEC identifies key results/claims; badge is based on reproducing these behaviors.
+
+Additional requirements
+- Paper already qualified for ROR (and thus ORO).
+- Authors assist with materials and clarifications.
+
+Process
+a. Authors submit a comprehensive reproduction plan and research objects.
+b. Independent attempt to reproduce by evaluators.
+c. Author–evaluator collaboration to resolve discrepancies.
+d. Final verification by the AEC; ROR-R badge appears next to ROR in proceedings.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Artifact Preparation & Submission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Authors seeking any badge must submit a 2-page artifact description including a brief artifact overview and review details in the IEEE conference template via EasyChair (select the CCGridW2027 Artifact track):
+
+- Software: link; language; build/run environment (tools, binaries, hardware); input dataset; expected output/metrics; estimated times for build/run.
+- Data: link; documentation per criteria above.
+
+Clearly map each artifact to specific parts of the accepted paper. 
+Cite artifacts with a persistent identifier (e.g., DOI from Zenodo/figshare). 
+Optionally add a development URL (e.g., GitHub). 
+
+If artifacts pass evaluation, update the 2-page description and include it as an appendix to the camera-ready paper, along with the badge logo. This step is required for publication with a badge.
+
+~~~~~~~~
+Timeline 
+~~~~~~~~
+- Deadline for artifact submission for accepted papers: February 10, 2027 
+- Artifact review midpoint check-in: February 15, 2027 
+- Artifact review results announcements to authors: March 8, 2027 
+- Camera-ready with 2-page appendix for awarded artifacts: March 16, 2027
+
+~~~~~~~~~~~~~~~~
+Submission Notes
+~~~~~~~~~~~~~~~~
+- Badging summary: ORO = DOI’d archive + license + docs; ROR = successful install/run + complete docs/tests; ROR-R = reviewers reproduce main behavior/metrics.
+- Commodity hardware: Artifacts should run on typical laptops/desktops; depend mainly on mainstream packages.
+- Packaging: Prefer container/VM for nontrivial dependencies (e.g., Docker image or OVF VM) and keep images small.
+- Containerization (recommended): For ROR / ROR-R, provide docker compose build and docker compose run (or Apptainer), bind-mount outputs to ./out/, include a 30–60 min smoke test with expected outputs (files/metrics/hashes/plots).
+- Versions & runtime: State exact CUDA/driver/toolchain versions; pin packages (lockfile). Target ≤1h install + ≤2h minimal run. If special HW/cloud needed, provide temporary access with full step-by-step instructions.
+- Specialized environments: If tightly coupled to HPC/cloud/accelerators, authors must provide reviewer access. State this in both the artifact submission and EasyChair abstract; share credentials with AEC as directed.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Artifact Chairs and Contacts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For further enquiries or information, please contact: 
+- Jorge G. Barbosa, Universidade do Porto, Portugal — jbarbosa@fe.up.pt
+- Tomasz Szydlo, Newcastle University, UK — tomasz.szydlo@newcastle.ac.uk
+- Qing Yang from University of North Texas (UNT): Qing.Yang@unt.edu

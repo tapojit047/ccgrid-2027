@@ -235,58 +235,11 @@
   .ccgrid2027-workshops-hero h1 {
     position: relative;
     z-index: 1;
-    padding-right: 170px;
     margin: 0;
     color: #ffffff;
     font-size: clamp(2rem, 5vw, 2.75rem);
     line-height: 1.1;
     font-weight: 800;
-  }
-
-  .ccgrid2027-cfp-graphic {
-    position: absolute;
-    top: 50%;
-    right: 64px;
-    z-index: 1;
-    width: 104px;
-    height: 132px;
-    transform: translateY(-50%) rotate(5deg);
-    border: 3px solid rgba(255, 255, 255, 0.88);
-    border-radius: 10px;
-    background:
-      repeating-linear-gradient(to bottom, transparent 0 17px, rgba(0, 79, 45, 0.24) 17px 20px),
-      rgba(255, 255, 255, 0.9);
-    box-shadow: -16px 16px 0 rgba(255, 255, 255, 0.18), 0 14px 30px rgba(0, 49, 28, 0.24);
-  }
-
-  .ccgrid2027-cfp-graphic::before {
-    content: "";
-    position: absolute;
-    top: 17px;
-    left: 18px;
-    width: 46px;
-    height: 8px;
-    border-radius: 4px;
-    background: var(--ccgrid-green);
-    box-shadow: 0 18px 0 rgba(10, 106, 59, 0.65);
-  }
-
-  .ccgrid2027-cfp-graphic::after {
-    content: "\2713";
-    position: absolute;
-    right: -18px;
-    bottom: -18px;
-    display: grid;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border: 4px solid rgba(255, 255, 255, 0.92);
-    border-radius: 50%;
-    color: #ffffff;
-    background: var(--ccgrid-green-dark);
-    font-size: 1.45rem;
-    font-weight: 800;
-    box-shadow: 0 8px 18px rgba(0, 49, 28, 0.24);
   }
 
   .ccgrid2027-workshops-card {
@@ -329,7 +282,8 @@
     margin-bottom: 0;
   }
 
-  .ccgrid2027-workshops-card ul {
+  .ccgrid2027-workshops-card ul,
+  .ccgrid2027-workshops-card ol {
     margin: 0;
     padding-left: 24px;
   }
@@ -338,33 +292,24 @@
     margin-top: 10px;
   }
 
+  .ccgrid2027-workshops-card ul + p,
+  .ccgrid2027-workshops-card ol + p {
+    margin-top: 18px;
+  }
+
+  .ccgrid2027-artifact-badges {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 22px auto 24px;
+  }
+
   .ccgrid2027-workshops-card a {
     color: var(--ccgrid-green);
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 2px;
-  }
-
-  .ccgrid2027-workshops-card .ccgrid2027-submission-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    margin-top: 14px;
-    padding: 0 22px;
-    border-radius: 8px;
-    color: #ffffff;
-    background: var(--ccgrid-green);
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0, 79, 45, 0.2);
-  }
-
-  .ccgrid2027-workshops-card .ccgrid2027-submission-button:hover,
-  .ccgrid2027-workshops-card .ccgrid2027-submission-button:focus {
-    color: #ffffff;
-    background: var(--ccgrid-green-dark);
-    text-decoration: none;
   }
 
   .ccgrid2027-workshops-lead {
@@ -523,15 +468,7 @@
     }
 
     .ccgrid2027-workshops-hero h1 {
-      padding-right: 82px;
       font-size: 2rem;
-    }
-
-    .ccgrid2027-cfp-graphic {
-      right: 28px;
-      width: 72px;
-      height: 92px;
-      opacity: 0.48;
     }
 
     .ccgrid2027-workshops-card {
@@ -562,10 +499,10 @@
           <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-calls-toggle">
           <label class="ccgrid2027-site-dropdown-label is-current" for="ccgrid2027-calls-toggle">Calls</label>
           <ul class="ccgrid2027-site-submenu">
-            <li><a href="https://hpcclab.org/?page_id=1886" aria-current="page">Call for Papers</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1886">Call for Papers</a></li>
             <li><a href="https://hpcclab.org/?page_id=1836">Call for Workshops</a></li>
             <li><a href="https://hpcclab.org/?page_id=1906">Call for Tutorials</a></li>
-            <li><a href="https://hpcclab.org/?page_id=1908">Call for Artifacts</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1908" aria-current="page">Call for Artifacts</a></li>
             <li><a href="https://hpcclab.org/?page_id=1869">Call for Posters</a></li>
             <li><a href="https://hpcclab.org/?page_id=1871">Call for SCALE Challenge</a></li>
           </ul>
@@ -595,49 +532,126 @@
 
   <div class="ccgrid2027-workshops-shell">
     <header class="ccgrid2027-workshops-hero">
-      <h1>Call for Papers</h1>
-      <span class="ccgrid2027-cfp-graphic" aria-hidden="true"></span>
+      <h1>Call for Artifacts</h1>
     </header>
 
     <section class="ccgrid2027-workshops-card ccgrid2027-workshops-lead">
-      <p>We invite original, high-quality papers that address <strong>fundamental research</strong> and <strong>emerging challenges</strong> across a broad spectrum of distributed systems and applications. Submissions may focus on theoretical foundations, system design, implementation, or real-world deployments. We particularly encourage contributions stemming from industry efforts and academia–industry collaborations, including practical experiences, deployed systems, and applied research with tangible impact.</p>
+      <p>CCGrid 2027 will award three IEEE reproducibility badges to accepted main research track papers:</p>
+      <ol>
+        <li>Open Research Objects (ORO)</li>
+        <li>Reusable/Research Objects Reviewed (ROR)</li>
+        <li>Results Reproduced (ROR-R)</li>
+      </ol>
+      <img class="ccgrid2027-artifact-badges" src="https://hpcclab.org/wp-content/uploads/2026/09/artifacts-scaled.png" alt="IEEE reproducibility badges: Open Research Objects, Research Objects Reviewed, and Results Reproduced">
+      <p>Artifact evaluation is post-acceptance only and does not influence acceptance decisions. Authors of accepted main research-track papers may request badges by submitting the artifacts and a 2-page description. If successfully reviewed, include the 2-page description and the awarded badge logo in the camera-ready submission.</p>
+      <p>Hosting software/data on GitHub/GitLab isn’t sufficient; assign a persistent identifier (e.g., via Zenodo, figshare). We recommend repositories like Zenodo, Dryad, or figshare to promote FAIR principles.</p>
     </section>
 
     <section class="ccgrid2027-workshops-card">
-      <h2>Technical Tracks</h2>
+      <h2>Description of Badges</h2>
+
+      <h3>1. Open Research Objects (ORO)</h3>
+      <p>Indicates that author-created digital objects (data/code) are permanently stored in a public repository with a globally unique identifier, guaranteed persistence, and an open license to maximize access. Aligns with ACM “Artifacts Available” and COS “Open Data/Materials” for digital objects.</p>
+      <p>The AEC and authors decide what objects are “relevant”. Provide enough documentation for reviewers to understand core functionality and data context.</p>
+
+      <h3>Review criteria</h3>
       <ul>
-        <li><strong>Track 1 — Hardware Systems, Networking, Architectures, and Future Compute Platforms:</strong> This track covers computing and communication platforms for cluster, cloud, edge, and HPC systems. Topics include processor, memory, storage, and network architectures; high-performance interconnects and network offload; accelerators, heterogeneous and reconfigurable systems, and hardware–software co-design; disaggregated and composable infrastructure; edge, data-center, and HPC platforms; quantum, neuromorphic, photonic, and other emerging systems; and hardware support for virtualization, isolation, reliability, and energy efficiency.</li>
-        <li><strong>Track 2 — Software Systems, Applications, Storage, and Programming Models:</strong> This track covers software foundations, abstractions, services, and applications for distributed systems. Topics include operating systems, middleware, runtimes, coordination services, containers, microservices, serverless and event-driven computing, distributed storage and data management, programming models and frameworks, workflows and distributed applications, and edge-to-cloud platforms. General-purpose resource management—including scheduling, elasticity, autoscaling, and placement—belongs here, together with consistency, replication, transactions, observability, debugging, deployment, interoperability, and lifecycle management.</li>
-        <li><strong>Track 3 — Systems for AI/ML and Distributed Intelligence:</strong> This track covers systems and infrastructure for developing, training, deploying, operating, and evaluating AI/ML workloads across cloud, edge, cluster, device, and HPC environments. Topics include distributed and parallel training, inference, and model serving; foundation and multimodal models; parallelism, communication, checkpointing, and data pipelines; federated and decentralized learning; edge intelligence; heterogeneous and accelerator-aware inference; model placement, compression, adaptation, and resource sharing; MLOps; and AI/ML workload characterization and benchmarking. Submissions must make a substantive systems contribution rather than focus primarily on model architecture or learning algorithms.</li>
-        <li><strong>Track 4 — Systems for LLM Applications and Agentic AI:</strong> This track covers systems challenges in applications built on foundation models, from non-agentic LLM services to stateful, tool-using, and multi-agent systems. Topics include application and agent architectures, runtimes, and middleware; retrieval, context, memory, state, caching, and persistence; gateways, routing, fallback, and provider interoperability; agent orchestration, coordination, planning, tool use, and workflow integration; LLMOps and AgentOps; tracing, semantic evaluation, guardrails, governance, and human oversight. For LLM applications and agentic-AI systems specifically, topics also include scheduling, placement, serving, deployment, scaling, admission control, and resource and cost management across cloud, edge, device, and HPC platforms.</li>
-        <li><strong>Track 5 — Performance Modeling, Analysis, and Optimization:</strong> This track covers methods and tools for understanding, predicting, analyzing, and improving the performance and efficiency of distributed, parallel, cloud, edge, and HPC systems. Topics include analytical, empirical, simulation, queueing, and learning-assisted modeling; digital twins and what-if analysis; benchmarking, workload characterization, profiling, tracing, bottleneck and root-cause analysis; throughput, latency, tail behavior, service-level objectives, and quality of service; performance portability and cross-layer optimization; cost–performance analysis; and performance studies of workflows, storage, networks, applications, and emerging workloads. Contributions should provide generalizable performance insight, methodology, or optimization capability.</li>
-        <li><strong>Track 6 — Distributed Systems Security, Privacy, Resilience, and Reliability:</strong> This track covers the protection, dependability, and trustworthy operation of distributed infrastructures and applications. Topics include threat models, attacks, defenses, and security architectures; authentication, authorization, identity, access control, and zero-trust systems; confidential and privacy-preserving computing, trusted execution, attestation, and secure isolation; intrusion, anomaly, and fault detection; containment, forensics, recovery, self-healing, and disaster tolerance; Byzantine fault tolerance and secure replication; availability, reliability modeling, and resilience engineering; and supply-chain security, integrity, provenance, verification, testing, and benchmarking.</li>
-        <li><strong>Track 7 — Sustainable Computing and Green Technologies:</strong> This track covers systems research that measures, reduces, or manages computing’s environmental impact. Topics include energy-efficient, carbon-aware, renewable-aware, and location- or time-aware computing; power, thermal, cooling, water, and facility-aware management; sustainable scheduling, placement, consolidation, autoscaling, and workload shifting; multi-objective optimization across performance, cost, reliability, and sustainability; embodied impact, hardware lifecycle, circularity, and reuse; environmental impacts of data centers, networks, storage, edge, HPC, and AI/ML workloads; sustainability-linked incentives and economic models; and reproducible sustainability measurement, benchmarking, reporting, and governance.</li>
+        <li><strong>Availability:</strong> Public repository with global identifier and guaranteed persistence.</li>
+        <li><strong>License:</strong> Open license maximizing accessibility (e.g., OSI/CC/public domain).</li>
+        <li><strong>Authorship:</strong> Reasonable and complete authorship attached to the archived artifact.</li>
+        <li><strong>Documentation:</strong> For software: core functionality overview. For data: context, description, source, and usage in the paper. Metadata accessible for relevant physical objects.</li>
       </ul>
+
+      <h3>2. Reusable/Research Objects Reviewed (ROR)</h3>
+      <p>Higher-level than ORO; requires ORO. Corresponds to IEEE “Code Reviewed.” All author-created digital objects used in the research (data/software) are reviewed.</p>
+
+      <h3>Software review criteria</h3>
+      <ul>
+        <li><strong>Documentation:</strong> Statement of need/function, install instructions, usage examples, API docs.</li>
+        <li><strong>Functionality:</strong> Reviewers can install and verify core functionality on commodity hardware with step-by-step instructions.</li>
+        <li><strong>Testing:</strong> Documented manual checks (e.g., sample input &amp; expected output) and ideally an automated test suite with CI (e.g., GitHub Actions).</li>
+      </ul>
+
+      <h3>Data review criteria</h3>
+      <ul>
+        <li><strong>Documentation:</strong> Dataset context, description, source, and how it’s used in the paper.</li>
+        <li><strong>Functionality:</strong> Enable reuse beyond the paper; for proprietary formats, include code to access data programmatically.</li>
+      </ul>
+
+      <h3>3. Results Reproduced (ROR-R)</h3>
+      <p>Highest tier, awarded when evaluators reproduce the paper’s key results using the authors’ objects, methods, code, and analysis conditions. Focus is on reproducing behavior/claims, not exact values (especially with hardware dependence).</p>
+
+      <h3>Scope</h3>
+      <ul>
+        <li><strong>Reproduce behavior:</strong> Attempt on the same hardware where feasible; otherwise collaborate to establish equivalent behavior on commodity hardware.</li>
+        <li><strong>Reproduce central results:</strong> AEC identifies key results/claims; badge is based on reproducing these behaviors.</li>
+      </ul>
+
+      <h3>Additional requirements</h3>
+      <ul>
+        <li>Paper already qualified for ROR (and thus ORO).</li>
+        <li>Authors assist with materials and clarifications.</li>
+      </ul>
+
+      <h3>Process</h3>
+      <ol type="a">
+        <li>Authors submit a comprehensive reproduction plan and research objects.</li>
+        <li>Independent attempt to reproduce by evaluators.</li>
+        <li>Author–evaluator collaboration to resolve discrepancies.</li>
+        <li>Final verification by the AEC; ROR-R badge appears next to ROR in proceedings.</li>
+      </ol>
     </section>
 
     <section class="ccgrid2027-workshops-card">
-      <h2>Important Dates</h2>
+      <h2>Artifact Preparation &amp; Submission</h2>
+      <p>Authors seeking any badge must submit a 2-page artifact description including a brief artifact overview and review details in the IEEE conference template via EasyChair (select the CCGridW2027 Artifact track):</p>
+      <ul>
+        <li><strong>Software:</strong> link; language; build/run environment (tools, binaries, hardware); input dataset; expected output/metrics; estimated times for build/run.</li>
+        <li><strong>Data:</strong> link; documentation per criteria above.</li>
+      </ul>
+      <p>Clearly map each artifact to specific parts of the accepted paper.</p>
+      <p>Cite artifacts with a persistent identifier (e.g., DOI from Zenodo/figshare).</p>
+      <p>Optionally add a development URL (e.g., GitHub).</p>
+      <p>If artifacts pass evaluation, update the 2-page description and include it as an appendix to the camera-ready paper, along with the badge logo. This step is required for publication with a badge.</p>
+    </section>
+
+    <section class="ccgrid2027-workshops-card">
+      <h2>Timeline</h2>
       <ul class="ccgrid2027-workshops-date-list">
-        <li><span>Abstract submission deadline:</span><strong>November 24, 2026 (AoE)</strong></li>
-        <li><span>Paper submission deadline:</span><strong>December 1, 2026 (AoE)</strong></li>
-        <li><span>Notification of acceptance:</span><strong>February 1, 2027</strong></li>
-        <li><span>Camera-ready submission:</span><strong>March 16, 2027</strong></li>
-        <li><span>Conference dates:</span><strong>May 24–27, 2027</strong></li>
+        <li><span>Deadline for artifact submission for accepted papers:</span> <strong>February 10, 2027</strong></li>
+        <li><span>Artifact review midpoint check-in:</span> <strong>February 15, 2027</strong></li>
+        <li><span>Artifact review results announcements to authors:</span> <strong>March 8, 2027</strong></li>
+        <li><span>Camera-ready with 2-page appendix for awarded artifacts:</span> <strong>March 16, 2027</strong></li>
       </ul>
     </section>
 
     <section class="ccgrid2027-workshops-card">
-      <h2>Submission Guidelines</h2>
+      <h2>Submission Notes</h2>
       <ul>
-        <li>Submitted manuscripts must be technical papers of no more than 10 letter-size (8.5 × 11 inch) pages, including references, figures, and tables, using the <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener">IEEE conference template</a>.</li>
-        <li>All submissions must be double-blind.</li>
-        <li>Papers will be judged on correctness, originality, technical strength, significance, presentation quality, and relevance. Submissions must present original, unpublished research not under review elsewhere.</li>
-        <li>Authors should read and follow the IEEE Submission and Peer Review Policies, including the IEEE <a href="https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-journal-author/publishing-ethics/guidelines-and-policies/submission-and-peer-review-policies/#ai-generated-text" target="_blank" rel="noopener">guidance on AI-generated text</a>.</li>
-        <li>For the final accepted manuscript, authors may purchase up to two additional pages beyond the original 10 pages, excluding references, to address reviewer comments.</li>
-        <li>Accepted papers will be submitted for possible inclusion in IEEE Xplore, subject to meeting IEEE Xplore’s scope and quality requirements.</li>
+        <li><strong>Badging summary:</strong> ORO = DOI’d archive + license + docs; ROR = successful install/run + complete docs/tests; ROR-R = reviewers reproduce main behavior/metrics.</li>
+        <li><strong>Commodity hardware:</strong> Artifacts should run on typical laptops/desktops; depend mainly on mainstream packages.</li>
+        <li><strong>Packaging:</strong> Prefer container/VM for nontrivial dependencies (e.g., Docker image or OVF VM) and keep images small.</li>
+        <li><strong>Containerization (recommended):</strong> For ROR / ROR-R, provide docker compose build and docker compose run (or Apptainer), bind-mount outputs to ./out/, include a 30–60 min smoke test with expected outputs (files/metrics/hashes/plots).</li>
+        <li><strong>Versions &amp; runtime:</strong> State exact CUDA/driver/toolchain versions; pin packages (lockfile). Target ≤1h install + ≤2h minimal run. If special HW/cloud needed, provide temporary access with full step-by-step instructions.</li>
+        <li><strong>Specialized environments:</strong> If tightly coupled to HPC/cloud/accelerators, authors must provide reviewer access. State this in both the artifact submission and EasyChair abstract; share credentials with AEC as directed.</li>
       </ul>
-      <p><a class="ccgrid2027-submission-button" href="https://easychair.org/conferences/?conf=ccgrid2027" target="_blank" rel="noopener">Submission Page</a></p>
+    </section>
+
+    <section class="ccgrid2027-workshops-card">
+      <h2>Artifact Chairs and Contacts</h2>
+      <p>For further enquiries or information, please contact:</p>
+      <div class="ccgrid2027-workshops-contact">
+        <strong>Jorge G. Barbosa, Universidade do Porto, Portugal —</strong>
+        <a href="mailto:jbarbosa@fe.up.pt">jbarbosa@fe.up.pt</a>
+      </div>
+      <div class="ccgrid2027-workshops-contact">
+        <strong>Tomasz Szydlo, Newcastle University, UK —</strong>
+        <a href="mailto:tomasz.szydlo@newcastle.ac.uk">tomasz.szydlo@newcastle.ac.uk</a>
+      </div>
+      <div class="ccgrid2027-workshops-contact">
+        <strong>Qing Yang from University of North Texas (UNT):</strong>
+        <a href="mailto:Qing.Yang@unt.edu">Qing.Yang@unt.edu</a>
+      </div>
     </section>
   </div>
 
