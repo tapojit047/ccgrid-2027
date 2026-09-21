@@ -1,0 +1,51 @@
+====================================================================
+IEEE CCGRID 2027: CALL FOR DOCTORAL SYMPOSIUM AND EARLY CAREER TRACK
+====================================================================
+The 27th IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2027)
+In conjunction with the 11th IEEE International Conference on Fog and Edge Computing (ICFEC 2027)
+In conjunction with the IEEE International Conference on Quantum Computing and Communication Systems (QSys 2027)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+May 24-27, 2027, Dallas-Fort Worth, Texas, USA
+https://hpcclab.org/ccgrid27/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid2027) invites participants to submit original and unpublished works to the CCGrid 2027 Doctoral Symposium and Early Career Track. Contributions may include preliminary approaches and results, novel work in progress, or a review of recent state-of-the-art.
+Submissions are welcome in all scopes aligned with the CCGrid2027 technical topics, as detailed in the Call for Conference Research Papers.
+
+~~~~~~~~~~~
+Eligibility
+~~~~~~~~~~~
+Eligibility for the CCGrid2027 Doctoral Symposium and Early Career Track requires first authors to satisfy one of the following criteria:
+- Doctoral students enrolled in a doctoral degree program at an academic institution, or
+Early-career researchers within four years past their Ph.D. graduation, with an official degree awarded in December 2022 or later.
+- Exceptional circumstances, such as parental leave or caregiving responsibilities, will be considered on a case-by-case basis.
+
+~~~~~~~~~~~~~~~~~~~~~
+Submission Guidelines
+~~~~~~~~~~~~~~~~~~~~~
+- Submissions must be short (2–4 pages) poster papers in the IEEE conference template via EasyChair (select the Submitted manuscripts should be structured as technical papers and may not exceed 4 letter size (8.5 × 11 inches) pages including references, figures and tables using the IEEE format for conference proceedings.
+- Author and reviewer anonymity: All submissions need to be single-blind. Manuscripts should include sufficient detail to facilitate thorough review and serve as a reference for future research.
+- Track selection: Authors should select the “CCGridW2027 Doctoral Symposium and Early Career Track” to ensure a correct assignment, as multiple technical tracks are open concurrently.
+- Review criteria: All manuscripts will be reviewed and will be judged on novelty, technical strength, correctness, quality of presentation, and relevance to the conference attendees.
+Accepted papers will be submitted for possible inclusion into IEEE Xplore, subject to meeting IEEE Xplore's scope and quality requirements.
+
+~~~~~~~~~~~~~~~
+Important Dates 
+~~~~~~~~~~~~~~~
+- Paper submission: February 15, 2027 
+- Notification of Acceptance: March 8, 2027 
+- Camera ready: March 16, 2027 
+
+~~~~~~~~~~~~
+Presentation
+~~~~~~~~~~~~
+- Authors of accepted papers will be allocated short speaking slots to present their work as part of a session at the main conference.
+- Participants are also expected to present their work at an interactive poster session and talk one-on-one with the attendees. The recommended poster size is max A0 portrait (841×1189 mm) or A1 portrait (594×841 mm).
+- At least one student/early career author of each accepted paper must register for the conference at the author registration rate and must present their work. Any no-shows will cause the accepted contribution to be withdrawn from the conference proceedings.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Posters Chairs and Contacts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For further enquiries or information, please contact: 
+- Carlos Jaime Barrios Hernandez, Industrial University of Santander (Colombia): carlos.barrios@scalac.redclara.net
+- Mohammad Goudarzi, Monash University (Australia): mohammad.goudarzi@monash.edu

@@ -199,34 +199,6 @@
     text-underline-offset: 2px;
   }
 
-  .ccgrid2027-workshops-card .ccgrid2027-submission-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    padding: 0 22px;
-    border-radius: 8px;
-    color: #ffffff;
-    background: var(--ccgrid-green);
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0, 79, 45, 0.2);
-  }
-
-  .ccgrid2027-workshops-card .ccgrid2027-submission-button:hover,
-  .ccgrid2027-workshops-card .ccgrid2027-submission-button:focus {
-    color: #ffffff;
-    background: var(--ccgrid-green-dark);
-    text-decoration: none;
-  }
-
-  .ccgrid2027-workshops-card .ccgrid2027-submission-note {
-    display: block;
-    margin-top: 10px;
-    color: var(--ccgrid-muted);
-    font-size: 0.9rem;
-  }
-
   .ccgrid2027-site-footer a:hover,
   .ccgrid2027-site-footer a:focus {
     color: #ffffff;
@@ -264,11 +236,58 @@
   .ccgrid2027-workshops-hero h1 {
     position: relative;
     z-index: 1;
+    padding-right: 170px;
     margin: 0;
     color: #ffffff;
     font-size: clamp(2rem, 5vw, 2.75rem);
     line-height: 1.1;
     font-weight: 800;
+  }
+
+  .ccgrid2027-cfp-graphic {
+    position: absolute;
+    top: 50%;
+    right: 64px;
+    z-index: 1;
+    width: 104px;
+    height: 132px;
+    transform: translateY(-50%) rotate(5deg);
+    border: 3px solid rgba(255, 255, 255, 0.88);
+    border-radius: 10px;
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 17px, rgba(0, 79, 45, 0.24) 17px 20px),
+      rgba(255, 255, 255, 0.9);
+    box-shadow: -16px 16px 0 rgba(255, 255, 255, 0.18), 0 14px 30px rgba(0, 49, 28, 0.24);
+  }
+
+  .ccgrid2027-cfp-graphic::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    width: 46px;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--ccgrid-green);
+    box-shadow: 0 18px 0 rgba(10, 106, 59, 0.65);
+  }
+
+  .ccgrid2027-cfp-graphic::after {
+    content: "\2713";
+    position: absolute;
+    right: -18px;
+    bottom: -18px;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 4px solid rgba(255, 255, 255, 0.92);
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--ccgrid-green-dark);
+    font-size: 1.45rem;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(0, 49, 28, 0.24);
   }
 
   .ccgrid2027-workshops-card {
@@ -327,8 +346,93 @@
     text-underline-offset: 2px;
   }
 
+  .ccgrid2027-workshops-card .ccgrid2027-submission-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    margin-top: 14px;
+    padding: 0 22px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: var(--ccgrid-green);
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 79, 45, 0.2);
+  }
+
+  .ccgrid2027-workshops-card .ccgrid2027-submission-button:hover,
+  .ccgrid2027-workshops-card .ccgrid2027-submission-button:focus {
+    color: #ffffff;
+    background: var(--ccgrid-green-dark);
+    text-decoration: none;
+  }
+
   .ccgrid2027-workshops-lead {
     border-top: 5px solid var(--ccgrid-green);
+  }
+
+  .ccgrid2027-tba-card {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    min-height: 260px;
+    overflow: hidden;
+    place-items: center;
+    padding: clamp(42px, 7vw, 68px) 24px;
+    border-top: 5px solid var(--ccgrid-green);
+    text-align: center;
+    background:
+      radial-gradient(circle at 16% 18%, rgba(63, 155, 103, 0.16) 0 72px, transparent 73px),
+      radial-gradient(circle at 88% 82%, rgba(10, 106, 59, 0.12) 0 110px, transparent 111px),
+      linear-gradient(135deg, #ffffff 0%, #f3faf6 54%, #e7f4ec 100%);
+  }
+
+  .ccgrid2027-tba-card::before,
+  .ccgrid2027-tba-card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(10, 106, 59, 0.14);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .ccgrid2027-tba-card::before {
+    top: -92px;
+    right: -54px;
+    width: 225px;
+    height: 225px;
+  }
+
+  .ccgrid2027-tba-card::after {
+    bottom: -118px;
+    left: -72px;
+    width: 270px;
+    height: 270px;
+  }
+
+  .ccgrid2027-tba-content {
+    position: relative;
+    z-index: 1;
+    width: min(680px, 100%);
+  }
+
+  .ccgrid2027-workshops-card .ccgrid2027-tba-title {
+    margin: 0 0 12px;
+    color: var(--ccgrid-green-dark);
+    font-size: clamp(2.25rem, 6vw, 3.6rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  .ccgrid2027-workshops-card .ccgrid2027-tba-message {
+    max-width: 520px;
+    margin: 0 auto;
+    color: var(--ccgrid-muted);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    line-height: 1.6;
   }
 
   .ccgrid2027-workshops-event-details {
@@ -483,7 +587,15 @@
     }
 
     .ccgrid2027-workshops-hero h1 {
+      padding-right: 82px;
       font-size: 2rem;
+    }
+
+    .ccgrid2027-cfp-graphic {
+      right: 28px;
+      width: 72px;
+      height: 92px;
+      opacity: 0.48;
     }
 
     .ccgrid2027-workshops-card {
@@ -512,13 +624,13 @@
         <li><a href="wordpress-embed.html">Home</a></li>
         <li class="ccgrid2027-site-dropdown">
           <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-calls-toggle">
-          <label class="ccgrid2027-site-dropdown-label is-current" for="ccgrid2027-calls-toggle">Calls</label>
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-calls-toggle">Calls</label>
           <ul class="ccgrid2027-site-submenu">
             <li><a href="call-for-papers-wp.html">Call for Papers</a></li>
             <li><a href="workshop-proposals-wp.html">Call for Workshops</a></li>
             <li><a href="tutorial-proposals-wp.html">Call for Tutorials</a></li>
             <li><a href="artifacts-wp.html">Call for Artifacts</a></li>
-            <li><a href="posters-wp.html" aria-current="page">Call for Posters</a></li>
+            <li><a href="posters-wp.html">Call for Posters</a></li>
             <li><a href="doctoral-symposium-wp.html">Call for Doctoral Symposium</a></li>
             <li><a href="scale-challenge-wp.html">Call for SCALE Challenge</a></li>
           </ul>
@@ -532,11 +644,11 @@
         </li>
         <li class="ccgrid2027-site-dropdown">
           <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-committees-toggle">
-          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-committees-toggle">Committees</label>
+          <label class="ccgrid2027-site-dropdown-label is-current" for="ccgrid2027-committees-toggle">Committees</label>
           <ul class="ccgrid2027-site-submenu">
             <li><a href="committees-wp.html">Organizing Committee</a></li>
             <li><a href="steering-committee-wp.html">Steering Committee</a></li>
-            <li><a href="program-committee-wp.html">Program Committee</a></li>
+            <li><a href="program-committee-wp.html" aria-current="page">Program Committee</a></li>
           </ul>
         </li>
         <li class="ccgrid2027-site-dropdown">
@@ -569,67 +681,14 @@
 
   <main class="ccgrid2027-workshops-shell">
     <header class="ccgrid2027-workshops-hero">
-      <h1>Call for Posters</h1>
+      <h1>Program Committee</h1>
     </header>
 
-    <section class="ccgrid2027-workshops-card ccgrid2027-workshops-lead">
-      <p>The 27th IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid2027) invites participants to submit original and unpublished works as posters to the CCGrid 2027 conference, presenting the latest breakthroughs in Cluster, Cloud and Internet computing. Topics should align with the conference scope and tracks.</p>
-    </section>
-
-    <section class="ccgrid2027-workshops-card">
-      <h2>Submission and Review Process</h2>
-      <p>Submissions must be short (2–4 pages) poster papers in the <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener">IEEE conference template</a> via EasyChair.</p>
-      <p>Submissions are peer-reviewed and evaluated on:</p>
-      <ul>
-        <li>Quality of presentation</li>
-        <li>Scientific content</li>
-        <li>Relevance to the conference</li>
-      </ul>
-      <p>Authors of the accepted poster papers must register and present their posters at the conference. Accepted papers will appear in the CCGRIDW 2027 companion proceedings.</p>
-    </section>
-
-    <div class="ccgrid2027-workshops-columns">
-      <section class="ccgrid2027-workshops-card">
-        <h2>Important Dates</h2>
-        <ul class="ccgrid2027-workshops-date-list">
-          <li><span>Poster paper submission:</span><strong>February 15, 2027</strong></li>
-          <li><span>Notification of Acceptance:</span><strong>March 8, 2027</strong></li>
-          <li><span>Camera ready:</span><strong>March 16, 2027</strong></li>
-        </ul>
-      </section>
-
-      <section class="ccgrid2027-workshops-card">
-        <h2>Best Poster Award</h2>
-        <p>A Best Poster Award will be presented to the most accomplished CCGrid 2027 poster selected by the Poster PC. The winner receives the best poster certificate.</p>
-      </section>
-    </div>
-
-    <section class="ccgrid2027-workshops-card">
-      <h2>Poster Presentation Information</h2>
-      <ul>
-        <li>By submitting, the authors agree to present the poster at CCGrid 2027 in Dallas-Fort Worth, Texas, USA.</li>
-        <li>Presenters must be registered as CCGrid 2027 participants (only registered presenters’ posters are admitted).</li>
-        <li>Posters will be displayed during the conference; presenters may give a brief presentation.</li>
-        <li>Size/format of posters: Max A0 portrait (841×1189 mm) or A1 portrait (594×841 mm).</li>
-        <li>Presenters create, print, and transport posters.</li>
-        <li>Organizers provide boards, numbers, topic areas, tape, etc.</li>
-      </ul>
-    </section>
-
-    <section class="ccgrid2027-workshops-card">
-      <h2>Posters Chairs and Contacts</h2>
-      <p>For further enquiries or information, please contact:</p>
-      <div class="ccgrid2027-workshops-contact">
-        <strong>Gabriele Russo Russo, University of Rome Tor Vergata (Italy):</strong>
-        <a href="mailto:russo.russo@ing.uniroma2.it">russo.russo@ing.uniroma2.it</a>
+    <section class="ccgrid2027-workshops-card ccgrid2027-tba-card">
+      <div class="ccgrid2027-tba-content">
+        <p class="ccgrid2027-tba-title">To Be Announced</p>
+        <p class="ccgrid2027-tba-message">More information will be available soon.</p>
       </div>
-      <div class="ccgrid2027-workshops-contact">
-        <strong>Zhiming Zhao, University of Amsterdam (Netherlands):</strong>
-        <a href="mailto:Z.Zhao@uva.nl">Z.Zhao@uva.nl</a>
-      </div>
-    </section>
-    <section class="ccgrid2027-workshops-card" aria-label="Submission">
-      <p><a class="ccgrid2027-submission-button" href="https://easychair.org/conferences/?conf=ieeeccgrid2027worksh" target="_blank" rel="noopener">Submission Page</a><small class="ccgrid2027-submission-note">Choose “IEEE CCGrid 2027 Posters”.</small></p>
     </section>
   </main>
 
