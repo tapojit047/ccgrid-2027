@@ -1,0 +1,766 @@
+<style>
+  .ccgrid2027-workshops-page {
+    --ccgrid-green: #0a6a3b;
+    --ccgrid-green-dark: #004f2d;
+    --ccgrid-green-soft: #eaf4ee;
+    --ccgrid-text: #28332e;
+    --ccgrid-muted: #4d5c55;
+    --ccgrid-border: #d9e5dd;
+    font-family: Arial, sans-serif;
+    color: var(--ccgrid-text);
+    background: #f6f8f6;
+  }
+
+  .ccgrid2027-workshops-page,
+  .ccgrid2027-workshops-page * {
+    box-sizing: border-box;
+  }
+
+  .ccgrid2027-site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    color: #ffffff;
+    background: #004f2d;
+    box-shadow: 0 4px 16px rgba(0, 49, 28, 0.18);
+  }
+
+  .ccgrid2027-site-nav {
+    width: min(1200px, calc(100% - 32px));
+    min-height: 68px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .ccgrid2027-site-menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-menu-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ccgrid2027-site-menu li {
+    margin: 0;
+  }
+
+  .ccgrid2027-site-dropdown {
+    position: relative;
+  }
+
+  .ccgrid2027-site-dropdown-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-dropdown-label {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 34px 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-dropdown-label::after {
+    content: "\25BE";
+    position: absolute;
+    right: 15px;
+    font-size: 0.75em;
+  }
+
+  .ccgrid2027-site-dropdown-label:hover,
+  .ccgrid2027-site-dropdown-toggle:focus + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-toggle:checked + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-label.is-current {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    transform: translateX(-50%);
+    border-radius: 0 0 8px 8px;
+    background: #004f2d;
+    box-shadow: 0 12px 24px rgba(0, 49, 28, 0.24);
+    list-style: none;
+  }
+
+  .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-dropdown-label {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-menu .ccgrid2027-site-submenu a {
+    min-height: 42px;
+    padding: 10px 16px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .ccgrid2027-site-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-menu a:hover,
+  .ccgrid2027-site-menu a:focus,
+  .ccgrid2027-site-menu a[aria-current="page"] {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-footer {
+    width: 100%;
+    padding: 26px 20px;
+    color: #ffffff;
+    background: #004f2d;
+  }
+
+  .ccgrid2027-site-footer-inner {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ccgrid2027-site-footer p {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .ccgrid2027-site-footer a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-site-footer a:hover,
+  .ccgrid2027-site-footer a:focus {
+    color: #ffffff;
+  }
+
+  .ccgrid2027-workshops-shell {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 40px 0 52px;
+  }
+
+  .ccgrid2027-workshops-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 42px;
+    border-radius: 24px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #004f2d 0%, #00773d 62%, #3f9b67 100%);
+    box-shadow: 0 16px 38px rgba(0, 79, 45, 0.18);
+  }
+
+  .ccgrid2027-workshops-hero::after {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: -150px;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+  }
+
+  .ccgrid2027-workshops-hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-workshops-card {
+    margin-bottom: 24px;
+    padding: 32px 36px;
+    border: 1px solid var(--ccgrid-border);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(20, 44, 34, 0.07);
+  }
+
+  .ccgrid2027-workshops-card h2 {
+    margin: 0 0 18px;
+    color: var(--ccgrid-green-dark);
+    font-size: 1.55rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-workshops-card h3 {
+    margin: 28px 0 12px;
+    color: var(--ccgrid-green-dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-workshops-card p,
+  .ccgrid2027-workshops-card li {
+    color: var(--ccgrid-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .ccgrid2027-workshops-card p {
+    margin: 0 0 18px;
+  }
+
+  .ccgrid2027-workshops-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ccgrid2027-workshops-card ul {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .ccgrid2027-workshops-card li + li {
+    margin-top: 10px;
+  }
+
+  .ccgrid2027-workshops-card a {
+    color: var(--ccgrid-green);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-workshops-lead {
+    border-top: 5px solid var(--ccgrid-green);
+  }
+
+  .ccgrid2027-workshops-event-details {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--ccgrid-border);
+  }
+
+  .ccgrid2027-workshops-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .ccgrid2027-workshops-columns .ccgrid2027-workshops-card {
+    margin-bottom: 24px;
+  }
+
+  .ccgrid2027-workshops-date-list {
+    padding: 0 !important;
+    list-style: none;
+  }
+
+  .ccgrid2027-workshops-date-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--ccgrid-border);
+  }
+
+  .ccgrid2027-workshops-date-list li:first-child {
+    padding-top: 0;
+  }
+
+  .ccgrid2027-workshops-date-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .ccgrid2027-workshops-date-list strong {
+    color: var(--ccgrid-text);
+    text-align: right;
+  }
+
+  .ccgrid2027-workshops-date-list .ccgrid2027-date-original {
+    color: var(--ccgrid-muted);
+    font-weight: 400;
+  }
+
+  .ccgrid2027-workshops-date-list .ccgrid2027-date-updated {
+    display: block;
+    margin-top: 3px;
+    color: #c62828;
+  }
+
+  .ccgrid2027-workshops-date-list .ccgrid2027-date-status {
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-workshops-contact {
+    padding: 16px 18px;
+    border-left: 4px solid var(--ccgrid-green);
+    border-radius: 0 10px 10px 0;
+    background: var(--ccgrid-green-soft);
+  }
+
+  .ccgrid2027-workshops-contact + .ccgrid2027-workshops-contact {
+    margin-top: 14px;
+  }
+
+  .ccgrid2027-workshops-contact strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ccgrid-text);
+  }
+
+  @media (max-width: 780px) {
+    .ccgrid2027-workshops-columns {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .ccgrid2027-workshops-date-list li {
+      display: block;
+    }
+
+    .ccgrid2027-workshops-date-list strong {
+      display: block;
+      margin-top: 3px;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .ccgrid2027-site-nav {
+      min-height: 62px;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 11px 0;
+    }
+
+    .ccgrid2027-site-menu-button {
+      display: inline-flex;
+    }
+
+    .ccgrid2027-site-menu {
+      display: none;
+      flex: 0 0 100%;
+      flex-direction: column;
+      margin-top: 11px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .ccgrid2027-site-menu-toggle:checked ~ .ccgrid2027-site-menu {
+      display: flex;
+    }
+
+    .ccgrid2027-site-menu a {
+      min-height: 44px;
+      padding: 9px 10px;
+      border-bottom: 0;
+      border-left: 4px solid transparent;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-dropdown,
+    .ccgrid2027-site-dropdown-label {
+      width: 100%;
+    }
+
+    .ccgrid2027-site-dropdown-label {
+      min-height: 44px;
+      padding: 9px 34px 9px 10px;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-submenu {
+      position: static;
+      width: 100%;
+      padding: 4px 0 4px 16px;
+      transform: none;
+      border-radius: 0;
+      background: rgba(0, 49, 28, 0.52);
+      box-shadow: none;
+    }
+
+    .ccgrid2027-site-submenu a {
+      min-height: 40px;
+      padding: 8px 10px;
+    }
+
+    .ccgrid2027-site-menu a:hover,
+    .ccgrid2027-site-menu a:focus,
+    .ccgrid2027-site-menu a[aria-current="page"] {
+      border-left-color: #ffffff;
+    }
+
+    .ccgrid2027-workshops-shell {
+      width: min(100% - 22px, 1100px);
+      padding: 24px 0 30px;
+    }
+
+    .ccgrid2027-workshops-hero {
+      padding: 30px 22px;
+      border-radius: 18px;
+    }
+
+    .ccgrid2027-workshops-hero h1 {
+      font-size: 2rem;
+    }
+
+    .ccgrid2027-workshops-card {
+      padding: 25px 21px;
+      border-radius: 14px;
+    }
+  }
+  @media (hover: none), (pointer: coarse) {
+    .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+    .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+      display: none;
+    }
+
+    .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+      display: block;
+    }
+  }
+
+  /* Accepted workshop directory; keep links current as organizers publish their websites. */
+  .ccgrid2027-workshops-shell > .ccgrid2027-directory-section-title {
+    margin: 36px 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--ccgrid-green);
+    color: var(--ccgrid-green-dark);
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-directory-entry .ccgrid2027-directory-workshop-heading {
+    margin: 0 0 18px;
+    font-size: 1.55rem;
+  }
+
+  .ccgrid2027-directory-entry h4 {
+    margin: 28px 0 12px;
+    color: var(--ccgrid-green-dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+
+  .ccgrid2027-directory-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    color: var(--ccgrid-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .ccgrid2027-directory-table th,
+  .ccgrid2027-directory-table td {
+    padding: 20px 16px;
+    border-bottom: 1px solid var(--ccgrid-border);
+    vertical-align: top;
+    overflow-wrap: anywhere;
+  }
+
+  .ccgrid2027-directory-table thead th {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    color: var(--ccgrid-green-dark);
+    background: var(--ccgrid-green-soft);
+    font-weight: 800;
+  }
+
+  .ccgrid2027-directory-table thead th:first-child { width: 22%; }
+  .ccgrid2027-directory-table thead th:last-child { width: 23%; }
+  .ccgrid2027-directory-table tbody tr:last-child > * { border-bottom: 0; }
+  .ccgrid2027-directory-pending { color: var(--ccgrid-muted); }
+  .ccgrid2027-directory-entry { scroll-margin-top: 24px; }
+  .ccgrid2027-directory-entry a { overflow-wrap: anywhere; }
+
+  .ccgrid2027-directory-entry .ccgrid2027-directory-title {
+    color: var(--ccgrid-text);
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .ccgrid2027-directory-tutorial + .ccgrid2027-directory-tutorial {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ccgrid-border);
+  }
+
+  .ccgrid2027-directory-tutorial h3 { margin-top: 0; }
+
+  @media (max-width: 640px) {
+    .ccgrid2027-directory-table,
+    .ccgrid2027-directory-table tbody,
+    .ccgrid2027-directory-table tr,
+    .ccgrid2027-directory-table td,
+    .ccgrid2027-directory-table tbody th { display: block; width: 100%; }
+    .ccgrid2027-directory-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+    .ccgrid2027-directory-table tbody tr { padding: 18px 0; border-bottom: 1px solid var(--ccgrid-border); }
+    .ccgrid2027-directory-table tbody tr:last-child { border-bottom: 0; padding-bottom: 0; }
+    .ccgrid2027-directory-table tbody th,
+    .ccgrid2027-directory-table td { padding: 0; border: 0; }
+    .ccgrid2027-directory-table td { margin-top: 8px; }
+  }
+</style>
+
+<div class="ccgrid2027-workshops-page">
+  <header class="ccgrid2027-site-header">
+    <nav class="ccgrid2027-site-nav" aria-label="Primary navigation">
+      <input class="ccgrid2027-site-menu-toggle" type="checkbox" id="ccgrid2027-site-menu-toggle">
+      <label class="ccgrid2027-site-menu-button" for="ccgrid2027-site-menu-toggle" aria-label="Toggle navigation menu">&#9776;</label>
+      <ul class="ccgrid2027-site-menu">
+        <li><a href="https://hpcclab.org/ccgrid27/">Home</a></li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-calls-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-calls-toggle">Calls</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://hpcclab.org/?page_id=1886">Call for Papers</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1836">Call for Workshops</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1906">Call for Tutorials</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1908">Call for Artifacts</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1869">Call for Posters</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1945">Call for Doctoral Symposium</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1871">Call for SCALE Challenge</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-authors-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-authors-toggle">Authors</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://hpcclab.org/?page_id=1952">Instructions for Manuscript Preparations</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-committees-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-committees-toggle">Committees</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://hpcclab.org/?page_id=1620">Organizing Committee</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1925">Steering Committee</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1953">Program Committee</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-attendees-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-attendees-toggle">Attendees</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://hpcclab.org/?page_id=1956">Venue and Stay</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1955">Conference Program</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1957">Registration</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1958">Travel Grants</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1959">Social Events</a></li>
+            <li><a href="https://hpcclab.org/?page_id=1960">Mentorship Session</a></li>
+            <li><a href="https://hpcclab.org/?page_id=2007">Code of Conduct</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-history-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-history-toggle">History</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://ccgrid2026.cdms.westernsydney.edu.au/index.html" target="_blank" rel="noopener">2026</a></li>
+            <li><a href="https://site.uit.no/ccgrid2025/" target="_blank" rel="noopener">2025</a></li>
+            <li><a href="https://clouds.cis.unimelb.edu.au/~rbuyya/ccgrid/" target="_blank" rel="noopener">Others</a></li>
+          </ul>
+        </li>
+        <li><a href="https://hpcclab.org/?page_id=1846">Patrons</a></li>
+        <li><a href="https://hpcclab.org/?page_id=1961" aria-current="page" aria-label="Workshops &amp; Tutorials">Workshops &amp; Tutorials</a></li>
+        <li><a href="https://clouds.cis.unimelb.edu.au/qsys2027/" target="_blank" rel="noopener">QSys2027</a></li>
+        <li><a href="https://fcrlab.unime.it/icfec2027/" target="_blank" rel="noopener">ICFEC2027</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="ccgrid2027-workshops-shell">
+    <header class="ccgrid2027-workshops-hero">
+      <h1>Workshops and Tutorials</h1>
+    </header>
+
+    <!-- Source: cfp/ccgrid27 workshop_and_tutorials.docx. Add confirmed workshop URLs in the table and detail sections below. -->
+    <h2 class="ccgrid2027-directory-section-title" id="accepted-workshops-title">Workshops</h2>
+    <section class="ccgrid2027-workshops-card ccgrid2027-directory-entry" id="accepted-workshops" aria-labelledby="accepted-workshops-title">
+      <table class="ccgrid2027-directory-table">
+        <thead>
+          <tr><th scope="col">Workshop</th><th scope="col">Title</th><th scope="col">Website</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><a href="#cic2">CIC²</a></th><td>Second IEEE Workshop on Computational Intelligence in Cluster, Cloud, and Internet Computing</td><td><span class="ccgrid2027-directory-pending">Website forthcoming</span></td></tr>
+          <tr><th scope="row"><a href="#quick">QUICK 2027</a></th><td>The 5th Workshop on Urgent Analytics for the Computing Continuum</td><td><span class="ccgrid2027-directory-pending">Website forthcoming</span></td></tr>
+          <tr><th scope="row"><a href="#continuumri">ContinuumRI 2027</a></th><td>3rd Workshop on Research Infrastructures for experimenting across the HPC-Cloud-Edge continuum</td><td><span class="ccgrid2027-directory-pending">Website forthcoming</span></td></tr>
+          <tr><th scope="row"><a href="#scale-cloud">SCALE Cloud</a></th><td>Scalable Computing with AI-driven Learning and Elasticity for Cloud</td><td><a href="https://sites.google.com/view/scalecloud/" target="_blank" rel="noopener" aria-label="Visit the SCALE Cloud website">Website</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ccgrid2027-workshops-card ccgrid2027-directory-entry" id="cic2" aria-labelledby="cic2-title">
+      <h3 class="ccgrid2027-directory-workshop-heading" id="cic2-title">CIC²</h3>
+      <p class="ccgrid2027-directory-title">Second IEEE Workshop on Computational Intelligence in Cluster, Cloud, and Internet Computing</p>
+      <h4>Organizers</h4>
+      <ul>
+        <li><strong>Amir H. Gandomi</strong> — University of Technology Sydney, Australia<br><a href="mailto:gandomi@uts.edu.au">gandomi@uts.edu.au</a></li>
+        <li><strong>Ray Telikhani</strong> — Swinburne University of Technology, Australia<br><a href="mailto:ray.telikhani@uts.edu.au">ray.telikhani@uts.edu.au</a></li>
+        <li><strong>Haihua Chen</strong> — University of North Texas, USA<br><a href="mailto:Haihua.Chen@unt.edu">Haihua.Chen@unt.edu</a></li>
+        <li><strong>Mahmoud Daneshmand</strong> — Stevens Institute of Technology, USA<br><a href="mailto:mdaneshm@stevens.edu">mdaneshm@stevens.edu</a></li>
+      </ul>
+    </section>
+
+    <section class="ccgrid2027-workshops-card ccgrid2027-directory-entry" id="quick" aria-labelledby="quick-title">
+      <h3 class="ccgrid2027-directory-workshop-heading" id="quick-title">QUICK 2027</h3>
+      <p class="ccgrid2027-directory-title">The 5th Workshop on Urgent Analytics for the Computing Continuum</p>
+      <h4>Organizers</h4>
+      <ul>
+        <li><strong>Daniel Balouek</strong> — STACK team, Nantes, France<br><a href="mailto:daniel.balouek@inria.fr">daniel.balouek@inria.fr</a></li>
+        <li><strong>Lorenzo Carnevale</strong> — University of Messina<br><a href="mailto:lorenzo.carnevale@unime.it">lorenzo.carnevale@unime.it</a></li>
+        <li><strong>Manish Parashar</strong> — University of Utah’s Kahlert School of Computing<br><a href="mailto:manish.parashar@utah.edu">manish.parashar@utah.edu</a></li>
+      </ul>
+    </section>
+
+    <section class="ccgrid2027-workshops-card ccgrid2027-directory-entry" id="continuumri" aria-labelledby="continuumri-title">
+      <h3 class="ccgrid2027-directory-workshop-heading" id="continuumri-title">ContinuumRI 2027</h3>
+      <p class="ccgrid2027-directory-title">3rd Workshop on Research Infrastructures for experimenting across the HPC-Cloud-Edge continuum</p>
+      <h4>Organizers</h4>
+      <ul>
+        <li><strong>Carlos Jaime Barrios Hernández</strong> — Universidad Industrial de Santander, Colombia, and INRIA, France<br><a href="mailto:carlosjaimebh@computer.org">carlosjaimebh@computer.org</a></li>
+        <li><strong>Jean Luca Bez</strong> — Lawrence Berkeley National Laboratory, USA<br><a href="mailto:jlbez@lbl.gov">jlbez@lbl.gov</a></li>
+        <li><strong>Philippe Olivier Alexandre Navaux</strong> — Informatics Institute, Federal University of Rio Grande do Sul (UFRGS), Brazil<br><a href="mailto:navaux@inf.ufrgs.br">navaux@inf.ufrgs.br</a></li>
+        <li><strong>Silvio Rizzi</strong> — Leadership Computing Facility, Argonne National Laboratory, Lemont, IL, USA<br><a href="mailto:srizzi@anl.gov">srizzi@anl.gov</a></li>
+        <li><strong>Rosa María Badia</strong> — Barcelona Supercomputing Center – Centro Nacional de Supercómputo, Spain<br><a href="mailto:rosa.m.badia@bsc.es">rosa.m.badia@bsc.es</a></li>
+      </ul>
+    </section>
+
+    <section class="ccgrid2027-workshops-card ccgrid2027-directory-entry" id="scale-cloud" aria-labelledby="scale-cloud-title">
+      <h3 class="ccgrid2027-directory-workshop-heading" id="scale-cloud-title">SCALE Cloud</h3>
+      <p class="ccgrid2027-directory-title">Scalable Computing with AI-driven Learning and Elasticity for Cloud</p>
+      <p><a href="https://sites.google.com/view/scalecloud/" target="_blank" rel="noopener" aria-label="Visit the SCALE Cloud website">Website</a></p>
+      <h4>Organizers</h4>
+      <ul>
+        <li><strong>Manoj Kumar Patra</strong> — Assistant Professor, Department of Computer Science and Engineering, National Institute of Technology Warangal, India<br><a href="mailto:manojpatra@nitw.ac.in">manojpatra@nitw.ac.in</a></li>
+        <li><strong>Vijayalakshmi Saravanan</strong> — Assistant Professor, University of Texas at Tyler, USA; Adjunct Professor, University of Texas at Dallas, USA<br><a href="mailto:vsaravanan@uttyler.edu">vsaravanan@uttyler.edu</a></li>
+        <li><strong>Dr. Khaled Z Ibrahim</strong> — Computer Staff Scientist, Lawrence Berkeley National Laboratory, Berkeley, CA, USA<br><a href="mailto:KZIbrahim@lbl.gov">KZIbrahim@lbl.gov</a></li>
+      </ul>
+    </section>
+
+    <h2 class="ccgrid2027-directory-section-title" id="accepted-tutorials-title">Tutorials</h2>
+    <section class="ccgrid2027-workshops-card ccgrid2027-directory-entry" id="accepted-tutorials" aria-labelledby="accepted-tutorials-title">
+      <article class="ccgrid2027-directory-tutorial" aria-labelledby="data-platforms-title">
+        <h3 id="data-platforms-title">Reliable AI-Ready Data Platforms at Enterprise Scale</h3>
+        <p><strong>Presenter:</strong> Ankush Gautam, Fidelity Investments</p>
+      </article>
+      <article class="ccgrid2027-directory-tutorial" aria-labelledby="edge-ai-title">
+        <h3 id="edge-ai-title">What Does It Take to Bring Edge AI to Embedded Devices?</h3>
+        <p><strong>Presenters:</strong> Qutaiba Saleh, Texas Instruments; Jianzhong Xu, Texas Instruments</p>
+      </article>
+    </section>
+  </div>
+
+  <footer class="ccgrid2027-site-footer">
+    <div class="ccgrid2027-site-footer-inner">
+      <p>&copy; 2027 CCGrid. All rights reserved.</p>
+      <p>Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a> · Contact: <a href="mailto:ccgrid2027@gmail.com">ccgrid2027@gmail.com</a></p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var toggles = document.querySelectorAll(".ccgrid2027-site-dropdown-toggle");
+
+    document.addEventListener("click", function (event) {
+      var clickedDropdown = event.target.closest(".ccgrid2027-site-dropdown");
+
+      toggles.forEach(function (toggle) {
+        if (!clickedDropdown || !clickedDropdown.contains(toggle)) {
+          toggle.checked = false;
+        }
+      });
+
+      if (!clickedDropdown && document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        toggles.forEach(function (toggle) {
+          toggle.checked = false;
+        });
+      }
+    });
+  }());
+</script>

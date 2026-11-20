@@ -1,0 +1,1012 @@
+<style>
+  .ccgrid2027-page {
+    --ccgrid-green: #00853e;
+    --ccgrid-green-2: #004f2d;
+    --ccgrid-light: #f6f8f6;
+    --ccgrid-text: #1d2522;
+    --ccgrid-muted: #34423c;
+    font-family: Arial, sans-serif;
+    color: var(--ccgrid-text);
+    background: var(--ccgrid-light);
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    container-type: inline-size;
+    container-name: ccgrid2027-page;
+  }
+
+  .ccgrid2027-page * {
+    box-sizing: border-box;
+  }
+
+  .ccgrid2027-site-nav {
+    width: min(1200px, calc(100% - 32px));
+    min-height: 68px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .ccgrid2027-hero-nav {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    z-index: 3;
+    width: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .ccgrid2027-site-menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-menu-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ccgrid2027-site-menu li {
+    margin: 0;
+  }
+
+  .ccgrid2027-site-dropdown {
+    position: relative;
+  }
+
+  .ccgrid2027-site-dropdown-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-site-dropdown-label {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 34px 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .ccgrid2027-site-dropdown-label::after {
+    content: "\25BE";
+    position: absolute;
+    right: 15px;
+    font-size: 0.75em;
+  }
+
+  .ccgrid2027-site-dropdown-label:hover,
+  .ccgrid2027-site-dropdown-toggle:focus + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-toggle:checked + .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown-label.is-current {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    transform: translateX(-50%);
+    border-radius: 0 0 8px 8px;
+    background: #004f2d;
+    box-shadow: 0 12px 24px rgba(0, 49, 28, 0.24);
+    list-style: none;
+  }
+
+  .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-dropdown-label,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-dropdown-label {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+  .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+    display: block;
+  }
+
+  .ccgrid2027-site-menu .ccgrid2027-site-submenu a {
+    min-height: 42px;
+    padding: 10px 16px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .ccgrid2027-site-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .ccgrid2027-site-menu a:hover,
+  .ccgrid2027-site-menu a:focus,
+  .ccgrid2027-site-menu a[aria-current="page"] {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+
+  .ccgrid2027-sponsors {
+    width: 100%;
+    max-width: 150px;
+    padding-top: 18px;
+    border-top: 2px solid rgba(0, 133, 62, 0.3);
+    color: var(--ccgrid-text);
+    text-align: center;
+  }
+
+  .ccgrid2027-sponsor-label {
+    margin: 0 0 12px;
+    color: var(--ccgrid-green-2);
+    font-size: 0.72rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .ccgrid2027-sponsor-logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    transition: opacity 160ms ease;
+  }
+
+  .ccgrid2027-sponsor-logo-link:hover,
+  .ccgrid2027-sponsor-logo-link:focus {
+    opacity: 0.78;
+  }
+
+  .ccgrid2027-sponsor-logo {
+    display: block;
+    width: min(140px, 100%);
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  .ccgrid2027-site-footer {
+    width: 100%;
+    padding: 26px 20px;
+    color: #ffffff;
+    background: #004f2d;
+  }
+
+  .ccgrid2027-site-footer-inner {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ccgrid2027-site-footer p {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .ccgrid2027-site-footer a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-site-footer a:hover,
+  .ccgrid2027-site-footer a:focus {
+    color: #ffffff;
+  }
+
+  .ccgrid2027-hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    aspect-ratio: 1672 / 941;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+    background: #004f2d;
+  }
+
+  .ccgrid2027-page > header.ccgrid2027-hero {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ccgrid2027-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0, 61, 38, 0.78), rgba(0, 61, 38, 0.5), rgba(0, 0, 0, 0.22));
+    pointer-events: none;
+  }
+
+  /* Five pictures, six seconds each. Negative delays start the full gallery immediately. */
+  .ccgrid2027-page .ccgrid2027-hero > .ccgrid2027-hero-slide {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: scale(1.06);
+    animation: ccgrid2027-home-gallery 30s linear infinite;
+  }
+
+  .ccgrid2027-page .ccgrid2027-hero > .ccgrid2027-hero-slide-1 {
+    background-image: url("assets/background4.jpg");
+    animation-delay: 0s;
+  }
+
+  .ccgrid2027-page .ccgrid2027-hero > .ccgrid2027-hero-slide-2 {
+    background-image: url("assets/background5.jpg");
+    animation-delay: -24s;
+  }
+
+  .ccgrid2027-page .ccgrid2027-hero > .ccgrid2027-hero-slide-3 {
+    background-image: url("assets/background6.jpg");
+    animation-delay: -18s;
+  }
+
+  .ccgrid2027-page .ccgrid2027-hero > .ccgrid2027-hero-slide-4 {
+    background-image: url("assets/background7.jpg");
+    animation-delay: -12s;
+  }
+
+  .ccgrid2027-page .ccgrid2027-hero > .ccgrid2027-hero-slide-5 {
+    background-image: url("assets/background8.png");
+    animation-delay: -6s;
+  }
+
+  @keyframes ccgrid2027-home-gallery {
+    0% {
+      opacity: 1;
+      transform: scale(1.06) translateX(0);
+    }
+
+    16% {
+      opacity: 1;
+    }
+
+    20% {
+      opacity: 0;
+      transform: scale(1.12) translateX(-2%);
+    }
+
+    96% {
+      opacity: 0;
+      transform: scale(1.06) translateX(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1.06) translateX(0);
+    }
+  }
+
+  .ccgrid2027-hero-content {
+    position: absolute;
+    left: 5.4%;
+    right: 5.4%;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  .ccgrid2027-hero-logos {
+    position: absolute;
+    left: 5.4%;
+    right: 5.4%;
+    top: 10%;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    pointer-events: none;
+  }
+
+  .ccgrid2027-hero-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 178px;
+    width: clamp(106px, 16cqi, 178px);
+    min-height: 72px;
+    min-height: clamp(48px, 6.5cqi, 72px);
+    padding: 10px 14px;
+    padding: clamp(5px, 0.9cqi, 10px) clamp(7px, 1.25cqi, 14px);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  }
+
+  .ccgrid2027-hero-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 62px;
+    max-height: clamp(40px, 5.5cqi, 62px);
+    object-fit: contain;
+    opacity: 0.9;
+  }
+
+  .ccgrid2027-hero-logo-ccgrid {
+    width: 130px;
+  }
+
+  .ccgrid2027-hero-logo-ccgrid img {
+    max-height: 90px;
+    max-height: clamp(52px, 7cqi, 90px);
+  }
+
+  .ccgrid2027-page h1.ccgrid2027-hero-title {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 clamp(18px, 2cqi, 30px);
+    color: #ffffff;
+    font-size: 60px;
+    font-size: clamp(30px, 4cqi, 60px);
+    line-height: 1.08;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.36);
+  }
+
+  .ccgrid2027-hero-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .ccgrid2027-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 100%;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 7px;
+    background: rgba(0, 80, 44, 0.78);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(2px);
+  }
+
+  .ccgrid2027-meta-text {
+    min-width: 0;
+  }
+
+  .ccgrid2027-meta-pill a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ccgrid2027-meta-pill a:hover,
+  .ccgrid2027-meta-pill a:focus {
+    color: #ffffff;
+  }
+
+  .ccgrid2027-meta-icon {
+    font-size: 1.15em;
+    line-height: 1;
+  }
+
+  .ccgrid2027-page .ccgrid2027-meta-pill > img.ccgrid2027-meta-logo {
+    display: block !important;
+    flex: 0 0 auto;
+    width: 56px !important;
+    max-width: 56px !important;
+    height: 30px !important;
+    max-height: 30px !important;
+    object-fit: contain !important;
+  }
+
+  .ccgrid2027-page .ccgrid2027-main {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 72px 0 30px !important;
+  }
+
+  .ccgrid2027-intro {
+    display: grid;
+    grid-template-columns: 150px minmax(220px, 1fr) minmax(400px, 1fr);
+    gap: 36px;
+    align-items: start;
+    margin-bottom: 44px;
+  }
+
+  .ccgrid2027-intro-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding-top: 4px;
+  }
+
+  .ccgrid2027-intro-logos a {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .ccgrid2027-page .ccgrid2027-intro-logos img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 150px !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .ccgrid2027-page .ccgrid2027-intro-logos a.ccgrid2027-sponsor-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ccgrid2027-page .ccgrid2027-intro-logos .ccgrid2027-sponsor-logo {
+    width: min(140px, 100%) !important;
+    max-width: 140px !important;
+    max-height: 60px !important;
+    margin: 0 auto;
+  }
+
+  .ccgrid2027-intro p,
+  .ccgrid2027-document p,
+  .ccgrid2027-document li {
+    color: var(--ccgrid-muted);
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .ccgrid2027-info {
+    margin: 0;
+    padding: 20px;
+    border-left: 5px solid #00853e;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(20, 44, 34, 0.08);
+  }
+
+  .ccgrid2027-info h2 {
+    margin: 0 0 16px;
+    color: #12251d;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .ccgrid2027-info ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: disc;
+  }
+
+  .ccgrid2027-info li::marker {
+    color: var(--ccgrid-green);
+  }
+
+  .ccgrid2027-info li {
+    margin: 0;
+    padding: 12px 0;
+    color: var(--ccgrid-muted);
+    font-size: 1.02rem;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+
+  .ccgrid2027-info li + li {
+    border-top: 1px solid #dce6e0;
+  }
+
+  .ccgrid2027-info strong {
+    display: inline;
+    color: var(--ccgrid-green);
+    font-weight: 700;
+  }
+
+  .ccgrid2027-document {
+    max-width: calc(100% - 186px);
+    margin: 0 0 0 186px;
+    padding: 36px;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(20, 44, 34, 0.08);
+  }
+
+  .ccgrid2027-document h1 {
+    margin: 38px 0 16px;
+    color: #12251d;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .ccgrid2027-document h1:first-child {
+    margin-top: 0;
+  }
+
+  .ccgrid2027-document ul {
+    margin: 0 0 18px;
+    padding-left: 24px;
+  }
+
+  .ccgrid2027-document li {
+    margin-bottom: 18px;
+  }
+
+  .ccgrid2027-document a {
+    color: var(--ccgrid-green);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .ccgrid2027-document .ccgrid2027-submission-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: 14px;
+    padding: 0 20px;
+    border-radius: 7px;
+    background: var(--ccgrid-green);
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 79, 45, 0.2);
+  }
+
+  .ccgrid2027-document .ccgrid2027-submission-button:hover,
+  .ccgrid2027-document .ccgrid2027-submission-button:focus {
+    background: var(--ccgrid-green-2);
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 900px) {
+    .ccgrid2027-hero-logo {
+      width: 144px;
+      min-height: 58px;
+      padding: 8px 10px;
+    }
+
+    .ccgrid2027-hero-logo img {
+      max-height: 48px;
+    }
+
+    .ccgrid2027-hero-logo-ccgrid {
+      width: 130px;
+    }
+
+    .ccgrid2027-hero-logo-ccgrid img {
+      max-height: 58px;
+    }
+
+    .ccgrid2027-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .ccgrid2027-intro-logos {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ccgrid2027-intro-logos a {
+      width: min(180px, calc(50% - 14px));
+      max-width: 180px;
+    }
+
+    .ccgrid2027-page .ccgrid2027-intro-logos img {
+      max-width: 180px !important;
+    }
+
+    .ccgrid2027-document {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .ccgrid2027-site-nav {
+      min-height: 62px;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 11px 0;
+    }
+
+    .ccgrid2027-site-menu-button {
+      display: inline-flex;
+    }
+
+    .ccgrid2027-site-menu {
+      display: none;
+      flex: 0 0 100%;
+      flex-direction: column;
+      margin-top: 11px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .ccgrid2027-site-menu-toggle:checked ~ .ccgrid2027-site-menu {
+      display: flex;
+    }
+
+    .ccgrid2027-site-menu a {
+      min-height: 44px;
+      padding: 9px 10px;
+      border-bottom: 0;
+      border-left: 4px solid transparent;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-dropdown,
+    .ccgrid2027-site-dropdown-label {
+      width: 100%;
+    }
+
+    .ccgrid2027-site-dropdown-label {
+      min-height: 44px;
+      padding: 9px 34px 9px 10px;
+      text-align: left;
+    }
+
+    .ccgrid2027-site-submenu {
+      position: static;
+      width: 100%;
+      padding: 4px 0 4px 16px;
+      transform: none;
+      border-radius: 0;
+      background: rgba(0, 49, 28, 0.52);
+      box-shadow: none;
+    }
+
+    .ccgrid2027-site-submenu a {
+      min-height: 40px;
+      padding: 8px 10px;
+    }
+
+    .ccgrid2027-site-menu a:hover,
+    .ccgrid2027-site-menu a:focus,
+    .ccgrid2027-site-menu a[aria-current="page"] {
+      border-left-color: #ffffff;
+    }
+
+    .ccgrid2027-hero {
+      aspect-ratio: auto;
+      min-height: 560px;
+    }
+
+    .ccgrid2027-hero-content {
+      left: 6%;
+      right: 6%;
+      top: 50%;
+    }
+
+    .ccgrid2027-hero-logos {
+      left: 6%;
+      right: 6%;
+      top: 10%;
+      gap: 7px;
+    }
+
+    .ccgrid2027-hero-logo {
+      width: 106px;
+      min-height: 42px;
+      padding: 5px 7px;
+      border-radius: 6px;
+    }
+
+    .ccgrid2027-hero-logo img {
+      max-height: 36px;
+    }
+
+    .ccgrid2027-hero-logo-ccgrid {
+      width: 126px;
+    }
+
+    .ccgrid2027-hero-logo-ccgrid img {
+      max-height: 44px;
+    }
+
+    .ccgrid2027-page h1.ccgrid2027-hero-title {
+      margin-bottom: 18px;
+      font-size: 28px;
+      font-size: clamp(15px, 4.4cqi, 28px);
+      line-height: 1.12;
+    }
+
+    .ccgrid2027-hero-details {
+      gap: 8px;
+    }
+
+    .ccgrid2027-meta-pill {
+      min-height: 32px;
+      padding: 0 10px;
+      font-size: 0.66rem;
+      border-radius: 5px;
+    }
+
+    .ccgrid2027-page .ccgrid2027-main {
+      width: min(100% - 28px, 1100px);
+      padding-top: 48px !important;
+    }
+
+    .ccgrid2027-document {
+      padding: 24px 18px;
+    }
+
+    .ccgrid2027-info li {
+      white-space: normal;
+    }
+  }
+  @media (hover: none), (pointer: coarse) {
+    .ccgrid2027-site-dropdown:hover > .ccgrid2027-site-submenu,
+    .ccgrid2027-site-dropdown:focus-within > .ccgrid2027-site-submenu {
+      display: none;
+    }
+
+    .ccgrid2027-site-dropdown-toggle:checked ~ .ccgrid2027-site-submenu {
+      display: block;
+    }
+  }
+</style>
+
+<div class="ccgrid2027-page">
+  <header class="ccgrid2027-hero" id="home">
+    <nav class="ccgrid2027-site-nav ccgrid2027-hero-nav" aria-label="Primary navigation">
+      <input class="ccgrid2027-site-menu-toggle" type="checkbox" id="ccgrid2027-site-menu-toggle">
+      <label class="ccgrid2027-site-menu-button" for="ccgrid2027-site-menu-toggle" aria-label="Toggle navigation menu">&#9776;</label>
+      <ul class="ccgrid2027-site-menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-calls-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-calls-toggle">Calls</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="call-for-papers.html">Call for Papers</a></li>
+            <li><a href="call-for-workshop-proposals.html">Call for Workshops</a></li>
+            <li><a href="call-for-tutorials.html">Call for Tutorials</a></li>
+            <li><a href="call-for-artifacts.html">Call for Artifacts</a></li>
+            <li><a href="call-for-posters.html">Call for Posters</a></li>
+            <li><a href="call-for-doctoral-symposium-and-early-career-track.html">Call for Doctoral Symposium</a></li>
+            <li><a href="call-for-scale-challenge.html">Call for SCALE Challenge</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-authors-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-authors-toggle">Authors</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="instructions-for-manuscript-preparations.html">Instructions for Manuscript Preparations</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-committees-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-committees-toggle">Committees</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="organizing-committee.html">Organizing Committee</a></li>
+            <li><a href="steering-committee.html">Steering Committee</a></li>
+            <li><a href="program-committee.html">Program Committee</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-attendees-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-attendees-toggle">Attendees</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="venue-and-stay.html">Venue and Stay</a></li>
+            <li><a href="conference-program.html">Conference Program</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="travel-grants.html">Travel Grants</a></li>
+            <li><a href="social-events.html">Social Events</a></li>
+            <li><a href="mentorship-session.html">Mentorship Session</a></li>
+            <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+          </ul>
+        </li>
+        <li class="ccgrid2027-site-dropdown">
+          <input class="ccgrid2027-site-dropdown-toggle" type="checkbox" id="ccgrid2027-history-toggle">
+          <label class="ccgrid2027-site-dropdown-label" for="ccgrid2027-history-toggle">History</label>
+          <ul class="ccgrid2027-site-submenu">
+            <li><a href="https://ccgrid2026.cdms.westernsydney.edu.au/index.html" target="_blank" rel="noopener">2026</a></li>
+            <li><a href="https://site.uit.no/ccgrid2025/" target="_blank" rel="noopener">2025</a></li>
+            <li><a href="https://clouds.cis.unimelb.edu.au/~rbuyya/ccgrid/" target="_blank" rel="noopener">Others</a></li>
+          </ul>
+        </li>
+        <li><a href="patron-program.html">Patrons</a></li>
+        <li><a href="workshops-and-tutorials.html" aria-label="Workshops &amp; Tutorials">Workshops &amp; Tutorials</a></li>
+        <li><a href="https://clouds.cis.unimelb.edu.au/qsys2027/" target="_blank" rel="noopener">QSys2027</a></li>
+        <li><a href="https://fcrlab.unime.it/icfec2027/" target="_blank" rel="noopener">ICFEC2027</a></li>
+      </ul>
+    </nav>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-1" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-2" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-3" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-4" aria-hidden="true"></span>
+    <span class="ccgrid2027-hero-slide ccgrid2027-hero-slide-5" aria-hidden="true"></span>
+    <div class="ccgrid2027-hero-logos" aria-label="Conference and host logos">
+      <span class="ccgrid2027-hero-logo ccgrid2027-hero-logo-ieee">
+        <img src="assets/logo_ieee.png" alt="IEEE">
+      </span>
+      <span class="ccgrid2027-hero-logo ccgrid2027-hero-logo-ccgrid">
+        <img src="assets/logo_ccgrid4.png" alt="CCGrid 2027">
+      </span>
+    </div>
+    <div class="ccgrid2027-hero-content" aria-label="Conference highlights">
+      <h1 class="ccgrid2027-hero-title"><span class="ccgrid2027-hero-title-line">The 27th IEEE International Symposium</span><span class="ccgrid2027-hero-title-line">on Cluster, Cloud, and Internet Computing</span></h1>
+      <div class="ccgrid2027-hero-details">
+        <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128205;</span>Dallas–Fort Worth, Texas, USA</span>
+        <span class="ccgrid2027-meta-pill"><img class="ccgrid2027-meta-logo" src="assets/unt_logo.png" width="56" height="30" style="display: block !important; width: 56px !important; max-width: 56px !important; height: 30px !important; max-height: 30px !important; object-fit: contain !important;" alt="" aria-hidden="true"><span class="ccgrid2027-meta-text">Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a></span></span>
+        <span class="ccgrid2027-meta-pill"><span class="ccgrid2027-meta-icon" aria-hidden="true">&#128197;</span>24-27 May 2027</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="ccgrid2027-main">
+    <section class="ccgrid2027-intro" aria-label="Conference overview">
+      <aside class="ccgrid2027-intro-logos" aria-label="Technical sponsors and cooperating organizations">
+        <a href="https://www.computer.org/" target="_blank" rel="noopener">
+          <img src="assets/logo_computer_society.png" alt="IEEE Computer Society">
+        </a>
+        <a href="https://www.computer.org/communities/tcsc" target="_blank" rel="noopener">
+          <img src="assets/logo_TCSC.png" alt="IEEE Technical Community on Scalable Computing">
+        </a>
+        <a href="https://www.acm.org/" target="_blank" rel="noopener">
+          <img src="../assets/ACM-In-Cooperation_large.gif" alt="ACM In-Cooperation">
+        </a>
+        <a href="https://www.sighpc.org/" target="_blank" rel="noopener">
+          <img src="../assets/ACM_SIGHPC_logo.png" alt="ACM Special Interest Group on High Performance Computing">
+        </a>
+        <div class="ccgrid2027-sponsors" aria-label="Gold Sponsor">
+          <p class="ccgrid2027-sponsor-label">Gold Sponsor</p>
+          <a class="ccgrid2027-sponsor-logo-link" href="https://www.unt.edu/" target="_blank" rel="noopener" aria-label="University of North Texas — Gold Sponsor">
+            <img class="ccgrid2027-sponsor-logo" src="assets/unt_logo.png" alt="University of North Texas">
+          </a>
+        </div>
+      </aside>
+      <div>
+        <p>
+          The IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid) is the premier forum for disseminating the latest advances in distributed systems, cloud computing, systems for AI/ML, distributed intelligence and future computing paradigms. In 2027, for the first time, CCGrid will be proudly hosted in Dallas–Fort Worth, Texas, USA, bringing together researchers, practitioners, and industry leaders from across the globe to explore innovations shaping the future of distributed and cloud technologies. The conference will be held in person, and <strong>at least one author of each accepted paper must register and present the paper in person</strong>. Failure to meet this requirement will result in the paper being excluded from the conference proceedings.
+        </p>
+      </div>
+      <section class="ccgrid2027-info" aria-labelledby="ccgrid2027-important-dates-title">
+        <h2 id="ccgrid2027-important-dates-title">Important Dates</h2>
+        <ul>
+          <li><strong>Abstract Deadline:</strong> November 24, 2026 (AoE)</li>
+          <li><strong>Paper Submission:</strong> December 1, 2026 (AoE)</li>
+          <li><strong>Notification:</strong> February 1, 2027</li>
+          <li><strong>Camera Ready:</strong> March 16, 2027</li>
+          <li><strong>Conference:</strong> May 24–27, 2027</li>
+        </ul>
+      </section>
+    </section>
+
+    <article id="announcements" class="ccgrid2027-document">
+      <h1>Announcements</h1>
+      <ul>
+        <li><strong>11/02/2026</strong> The <a href="https://hpcclab.org/?page_id=1953">Program Committee track chairs</a> have been announced.</li>
+        <li><strong>09/21/2026</strong> The <a href="call-for-workshop-proposals.html">Call for Workshop Proposals</a> deadline has been extended to <strong>October 5, 2026 (AoE)</strong>.</li>
+        <li><strong>09/21/2026</strong> The <a href="call-for-tutorials.html">Call for Tutorial Proposals</a> deadline has been extended to <strong>October 5, 2026 (AoE)</strong>.</li>
+        <li><strong>09/16/2026</strong> The <a href="call-for-doctoral-symposium-and-early-career-track.html">Call for Doctoral Symposium and Early Career Track</a> has been released.</li>
+        <li><strong>09/16/2026</strong> The <a href="https://fcrlab.unime.it/icfec2027/" target="_blank" rel="noopener">ICFEC 2027</a> co-located event website is available.</li>
+        <li><strong>09/10/2026</strong> CCGRID 2027 <a href="steering-committee.html">Steering Committee</a> has been announced.</li>
+        <li><strong>09/09/2026</strong> The <a href="call-for-tutorials.html">Call for Tutorial Proposals</a> has been released.</li>
+        <li><strong>09/08/2026</strong> The <a href="call-for-artifacts.html">Call for Artifacts</a> has been released.</li>
+        <li><strong>09/07/2026</strong> The <a href="https://clouds.cis.unimelb.edu.au/qsys2027/" target="_blank" rel="noopener">QSys 2027</a> co-located event website is available.</li>
+        <li><strong>09/01/2026</strong> The <a href="call-for-posters.html">Call for Posters</a> has been released.</li>
+        <li><strong>08/31/2026</strong> The <a href="call-for-scale-challenge.html">Call for SCALE Challenge</a> has been released.</li>
+        <li><strong>08/20/2026</strong> The <a href="call-for-workshop-proposals.html">Call for Workshop Proposals</a> has been released.</li>
+        <li><strong>08/19/2026</strong> The <a href="patron-program.html">Patron Program</a> has been released.</li>
+        <li><strong>07/17/2026</strong> CCGRID 2027 <a href="organizing-committee.html">Organizing Committee</a> has been announced.</li>
+        <li><strong>04/28/2026</strong> CCGRID 2027 <a href="call-for-papers.html">Call for Papers</a> has been released.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="ccgrid2027-site-footer">
+    <div class="ccgrid2027-site-footer-inner">
+      <p>&copy; 2027 CCGrid. All rights reserved.</p>
+      <p>Hosted by <a href="https://hpcclab.org/" target="_blank" rel="noopener">HPCC Lab</a> at the <a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a> · Contact: <a href="mailto:ccgrid2027@gmail.com">ccgrid2027@gmail.com</a></p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var toggles = document.querySelectorAll(".ccgrid2027-site-dropdown-toggle");
+
+    document.addEventListener("click", function (event) {
+      var clickedDropdown = event.target.closest(".ccgrid2027-site-dropdown");
+
+      toggles.forEach(function (toggle) {
+        if (!clickedDropdown || !clickedDropdown.contains(toggle)) {
+          toggle.checked = false;
+        }
+      });
+
+      if (!clickedDropdown && document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        toggles.forEach(function (toggle) {
+          toggle.checked = false;
+        });
+      }
+    });
+  }());
+</script>
