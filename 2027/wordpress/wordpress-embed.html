@@ -176,6 +176,46 @@
     text-decoration: none;
   }
 
+  .ccgrid2027-sponsors {
+    width: 100%;
+    max-width: 150px;
+    padding-top: 18px;
+    border-top: 2px solid rgba(0, 133, 62, 0.3);
+    color: var(--ccgrid-text);
+    text-align: center;
+  }
+
+  .ccgrid2027-sponsor-label {
+    margin: 0 0 12px;
+    color: var(--ccgrid-green-2);
+    font-size: 0.72rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .ccgrid2027-sponsor-logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    transition: opacity 160ms ease;
+  }
+
+  .ccgrid2027-sponsor-logo-link:hover,
+  .ccgrid2027-sponsor-logo-link:focus {
+    opacity: 0.78;
+  }
+
+  .ccgrid2027-sponsor-logo {
+    display: block;
+    width: min(140px, 100%);
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
   .ccgrid2027-site-footer {
     width: 100%;
     padding: 26px 20px;
@@ -462,6 +502,21 @@
     max-width: 150px !important;
     height: auto !important;
     object-fit: contain !important;
+  }
+
+  .ccgrid2027-page .ccgrid2027-intro-logos a.ccgrid2027-sponsor-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ccgrid2027-page .ccgrid2027-intro-logos .ccgrid2027-sponsor-logo {
+    width: min(140px, 100%) !important;
+    max-width: 140px !important;
+    max-height: 60px !important;
+    margin: 0 auto;
   }
 
   .ccgrid2027-intro p,
@@ -861,10 +916,16 @@
         <a href="https://www.sighpc.org/" target="_blank" rel="noopener">
           <img src="https://hpcclab.org/wp-content/uploads/2026/10/ACM_SIGHPC_logo.png" alt="ACM Special Interest Group on High Performance Computing">
         </a>
+        <div class="ccgrid2027-sponsors" aria-label="Gold Sponsor">
+          <p class="ccgrid2027-sponsor-label">Gold Sponsor</p>
+          <a class="ccgrid2027-sponsor-logo-link" href="https://www.unt.edu/" target="_blank" rel="noopener" aria-label="University of North Texas — Gold Sponsor">
+            <img class="ccgrid2027-sponsor-logo" src="https://hpcclab.org/wp-content/uploads/2026/05/unt_logo.png" alt="University of North Texas">
+          </a>
+        </div>
       </aside>
       <div>
         <p>
-          The IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid) is the premier forum for disseminating the latest advances in distributed systems, cloud computing, systems for AI/ML, distributed intelligence and future computing paradigms. In 2027, for the first time, CCGrid will be proudly hosted in Dallas–Fort Worth, Texas, USA, bringing together researchers, practitioners, and industry leaders from across the globe to explore innovations shaping the future of distributed and cloud technologies.
+          The IEEE International Symposium on Cluster, Cloud, and Internet Computing (CCGrid) is the premier forum for disseminating the latest advances in distributed systems, cloud computing, systems for AI/ML, distributed intelligence and future computing paradigms. In 2027, for the first time, CCGrid will be proudly hosted in Dallas–Fort Worth, Texas, USA, bringing together researchers, practitioners, and industry leaders from across the globe to explore innovations shaping the future of distributed and cloud technologies. The conference will be held in person, and <strong>at least one author of each accepted paper must register and present the paper in person</strong>. Failure to meet this requirement will result in the paper being excluded from the conference proceedings.
         </p>
       </div>
       <section class="ccgrid2027-info" aria-labelledby="ccgrid2027-important-dates-title">
@@ -882,6 +943,7 @@
     <article id="announcements" class="ccgrid2027-document">
       <h1>Announcements</h1>
       <ul>
+        <li><strong>11/02/2026</strong> The <a href="https://hpcclab.org/?page_id=1953">Program Committee track chairs</a> have been announced.</li>
         <li><strong>09/21/2026</strong> The <a href="https://hpcclab.org/?page_id=1836">Call for Workshop Proposals</a> deadline has been extended to <strong>October 5, 2026 (AoE)</strong>.</li>
         <li><strong>09/21/2026</strong> The <a href="https://hpcclab.org/?page_id=1906">Call for Tutorial Proposals</a> deadline has been extended to <strong>October 5, 2026 (AoE)</strong>.</li>
         <li><strong>09/16/2026</strong> The <a href="https://hpcclab.org/?page_id=1945">Call for Doctoral Symposium and Early Career Track</a> has been released.</li>

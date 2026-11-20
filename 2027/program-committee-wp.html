@@ -494,10 +494,62 @@
     color: var(--ccgrid-text);
   }
 
+  .ccgrid2027-pc-intro {
+    border-top: 5px solid var(--ccgrid-green);
+  }
+
+  .ccgrid2027-pc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .ccgrid2027-pc-grid .ccgrid2027-pc-track-card {
+    margin-bottom: 0;
+    border-top: 5px solid var(--ccgrid-green);
+  }
+
+  .ccgrid2027-pc-grid .ccgrid2027-pc-track-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ccgrid2027-pc-track-number {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--ccgrid-green);
+    font-size: 0.82rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ccgrid2027-pc-track-card h3 {
+    margin: 24px 0 10px;
+    font-size: 1rem;
+  }
+
+  .ccgrid2027-pc-chair-list {
+    padding: 0 !important;
+    list-style: none;
+  }
+
+  .ccgrid2027-pc-chair-list strong {
+    color: var(--ccgrid-text);
+  }
+
   @media (max-width: 780px) {
     .ccgrid2027-workshops-columns {
       grid-template-columns: 1fr;
       gap: 0;
+    }
+
+    .ccgrid2027-pc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ccgrid2027-pc-grid .ccgrid2027-pc-track-card:last-child {
+      grid-column: auto;
     }
 
     .ccgrid2027-workshops-date-list li {
@@ -685,12 +737,82 @@
       <h1>Program Committee</h1>
     </header>
 
-    <section class="ccgrid2027-workshops-card ccgrid2027-tba-card">
-      <div class="ccgrid2027-tba-content">
-        <p class="ccgrid2027-tba-title">To Be Announced</p>
-        <p class="ccgrid2027-tba-message">More information will be available soon.</p>
-      </div>
-    </section>
+    <!-- <section class="ccgrid2027-workshops-card ccgrid2027-pc-intro">
+      <h2>Track Chairs</h2>
+      <p>The CCGrid 2027 technical program is organized across seven tracks. The track chairs for each area are listed below.</p>
+    </section> -->
+
+    <div class="ccgrid2027-pc-grid">
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 1</span>
+        <h2>Hardware Systems, Networking, Architectures, and Future Compute Platforms</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Radu Prodan</strong>, University of Innsbruck, Austria</li>
+          <li><strong>Haiying Shen</strong>, University of Virginia, United States</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 2</span>
+        <h2>Software Systems, Applications, Storage, and Programming Models</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Vana Kalogeraki</strong>, Athens University of Economics and Business, Greece</li>
+          <li><strong>Bogdan Nicolae</strong>, Argonne National Laboratory, United States</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 3</span>
+        <h2>Systems for AI/ML and Distributed Intelligence</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Ali R. Butt</strong>, Virginia Tech, United States</li>
+          <li><strong>Pooyan Jamshidi</strong>, University of South Carolina, United States</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 4</span>
+        <h2>Systems for LLM Applications and Agentic AI</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Yunhe Feng</strong>, University of North Texas, United States</li>
+          <li><strong>Yogesh Simmhan</strong>, Indian Institute of Science, India</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 5</span>
+        <h2>Performance Modeling, Analysis, and Optimization</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Danilo Ardagna</strong>, Politecnico di Milano, Italy</li>
+          <li><strong>Catia Trubiani</strong>, Gran Sasso Science Institute, Italy</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 6</span>
+        <h2>Distributed Systems Security, Privacy, Resilience, and Reliability</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Guanpeng Li</strong>, University of Florida, United States</li>
+          <li><strong>Roman Vitenberg</strong>, University of Oslo, Norway</li>
+        </ul>
+      </section>
+
+      <section class="ccgrid2027-workshops-card ccgrid2027-pc-track-card">
+        <span class="ccgrid2027-pc-track-number">Track 7</span>
+        <h2>Sustainable Computing and Green Technologies</h2>
+        <h3>Chairs</h3>
+        <ul class="ccgrid2027-pc-chair-list">
+          <li><strong>Tevfik Kosar</strong>, University at Buffalo, United States</li>
+          <li><strong>Laurent Lefèvre</strong>, Inria / École Normale Supérieure de Lyon, France</li>
+        </ul>
+      </section>
+    </div>
   </main>
 
   <footer class="ccgrid2027-site-footer">
